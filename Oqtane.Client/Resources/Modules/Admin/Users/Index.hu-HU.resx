@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Confirm.User.Delete" xml:space="preserve">
+    <value>Biztos benne, hogy törölni szeretné a következőt: {0}?</value>
+  </data>
+  <data name="AddUser.Text" xml:space="preserve">
+    <value>Felhasználó hozzáadása</value>
+  </data>
+  <data name="DeleteUser.Header" xml:space="preserve">
+    <value>Felhasználó törlése</value>
+  </data>
+  <data name="AllowRegistration.HelpText" xml:space="preserve">
+    <value>Szeretné, ha névtelen látogatók regisztrálhatnának fiókot az oldalon?</value>
+  </data>
+  <data name="AllowRegistration.Text" xml:space="preserve">
+    <value>Regisztráció engedélyezése? </value>
+  </data>
+  <data name="RegisterUrl.HelpText" xml:space="preserve">
+    <value>Opcionálisan adjon meg egyéni regisztrációs URL-t</value>
+  </data>
+  <data name="RegisterUrl.Text" xml:space="preserve">
+    <value>Regisztrációs URL: </value>
+  </data>
+  <data name="ProfileUrl.HelpText" xml:space="preserve">
+    <value>Opcionálisan adjon meg egyéni felhasználói profil URL-t</value>
+  </data>
+  <data name="ProfileUrl.Text" xml:space="preserve">
+    <value>Profil URL: </value>
+  </data>
+  <data name="Error.SaveSiteSettings" xml:space="preserve">
+    <value>Hiba a beállítások mentésekor</value>
+  </data>
+  <data name="Settings.Heading" xml:space="preserve">
+    <value>Beállítások elemre</value>
+  </data>
+  <data name="Success.SaveSiteSettings" xml:space="preserve">
+    <value>A beállítások sikeresen elmentve</value>
+  </data>
+  <data name="Users.Heading" xml:space="preserve">
+    <value>Felhasználók</value>
+  </data>
+  <data name="DeleteUser.Text" xml:space="preserve">
+    <value>Töröl</value>
+  </data>
+  <data name="EditUser.Text" xml:space="preserve">
+    <value>Szerkesztés</value>
+  </data>
+  <data name="Roles.Text" xml:space="preserve">
+    <value>Szerepek</value>
+  </data>
+  <data name="LockoutDuration.HelpText" xml:space="preserve">
+    <value>A percek száma, ameddig egy felhasználót ki kell zárni</value>
+  </data>
+  <data name="LockoutDuration.Text" xml:space="preserve">
+    <value>Kizárás időtartama:</value>
+  </data>
+  <data name="MaximumFailures.HelpText" xml:space="preserve">
+    <value>A bejelentkezési kísérletek maximális száma a felhasználó kizárása előtt</value>
+  </data>
+  <data name="MaximumFailures.Text" xml:space="preserve">
+    <value>Maximális hibák:</value>
+  </data>
+  <data name="RequireDigit.HelpText" xml:space="preserve">
+    <value>Jelezze, ha a jelszavaknak tartalmazniuk kell számjegyet</value>
+  </data>
+  <data name="RequireDigit.Text" xml:space="preserve">
+    <value>Számjegyet igényel?</value>
+  </data>
+  <data name="RequiredLength.HelpText" xml:space="preserve">
+    <value>A jelszó minimális hossza</value>
+  </data>
+  <data name="RequiredLength.Text" xml:space="preserve">
+    <value>Minimális hossz:</value>
+  </data>
+  <data name="RequireLower.HelpText" xml:space="preserve">
+    <value>Jelezze, ha a jelszavaknak tartalmazniuk kell kisbetűt</value>
+  </data>
+  <data name="RequireLower.Text" xml:space="preserve">
+    <value>Kisbetűt igényel?</value>
+  </data>
+  <data name="RequirePunctuation.HelpText" xml:space="preserve">
+    <value>Jelezze, ha a jelszavaknak tartalmazniuk kell nem alfanumerikus karaktert (pl. írásjeleket)</value>
+  </data>
+  <data name="RequirePunctuation.Text" xml:space="preserve">
+    <value>Írásjeleket igényel?</value>
+  </data>
+  <data name="RequireUpper.HelpText" xml:space="preserve">
+    <value>Jelezze, ha a jelszavaknak tartalmazniuk kell nagybetűt</value>
+  </data>
+  <data name="RequireUpper.Text" xml:space="preserve">
+    <value>Nagybetűt igényel?</value>
+  </data>
+  <data name="Success.UpdateConfig.Restart" xml:space="preserve">
+    <value>Konfiguráció frissítve. A módosítások aktiválásához válassza az Alkalmazás újraindítása lehetőséget.</value>
+  </data>
+  <data name="UniqueCharacters.HelpText" xml:space="preserve">
+    <value>Az egyedi karakterek minimális száma, amelyet egy jelszónak tartalmaznia kell</value>
+  </data>
+  <data name="UniqueCharacters.Text" xml:space="preserve">
+    <value>Egyedi karakterek:</value>
+  </data>
+  <data name="AllowSiteLogin.HelpText" xml:space="preserve">
+    <value>Engedélyezi a felhasználóknak, hogy a webhelyen helyileg kezelt felhasználónévvel és jelszóval jelentkezzenek be? Vegye figyelembe, hogy csak akkor kapcsolja ki ezt az opciót, ha már sikeresen konfigurált egy alternatív bejelentkezési módot, különben kizárhatja magát a webhelyről.</value>
+  </data>
+  <data name="AllowSiteLogin.Text" xml:space="preserve">
+    <value>Helyi bejelentkezés engedélyezése?</value>
+  </data>
+  <data name="Authority.HelpText" xml:space="preserve">
+    <value>Az identitásszolgáltatóhoz társított jogosultsági URL vagy kibocsátó URL-je</value>
+  </data>
+  <data name="Authority.Text" xml:space="preserve">
+    <value>Hatóság:</value>
+  </data>
+  <data name="AuthorizationUrl.HelpText" xml:space="preserve">
+    <value>Az engedélyezési kód megszerzésének végpontja</value>
+  </data>
+  <data name="AuthorizationUrl.Text" xml:space="preserve">
+    <value>Engedélyezési URL:</value>
+  </data>
+  <data name="ClientID.HelpText" xml:space="preserve">
+    <value>Az identitásszolgáltató ügyfél-azonosítója</value>
+  </data>
+  <data name="ClientID.Text" xml:space="preserve">
+    <value>Ügyfél azonosító:</value>
+  </data>
+  <data name="ClientSecret.HelpText" xml:space="preserve">
+    <value>Az identitásszolgáltató ügyféltitka</value>
+  </data>
+  <data name="ClientSecret.Text" xml:space="preserve">
+    <value>Ügyfél titka:</value>
+  </data>
+  <data name="CreateUsers.HelpText" xml:space="preserve">
+    <value>Szeretné, hogy az új felhasználók automatikusan létrejöjjenek? Ha letiltja ezt az opciót, a felhasználóknak már regisztrálniuk kell az oldalon ahhoz, hogy külső bejelentkezési adataikkal bejelentkezhessenek.</value>
+  </data>
+  <data name="CreateUsers.Text" xml:space="preserve">
+    <value>Új felhasználók létrehozása?</value>
+  </data>
+  <data name="DomainFilter.HelpText" xml:space="preserve">
+    <value>Adja meg az e-mail domain szűrési feltételeit (vesszővel elválasztva). A kizárandó domainek elé felkiáltójelet (!) kell tenni. Például a „microsoft.com,!hotmail.com” a microsoft.com e-mail címeket tartalmazza, de a hotmail.com e-mail címeket nem.</value>
+  </data>
+  <data name="DomainFilter.Text" xml:space="preserve">
+    <value>Domainszűrő:</value>
+  </data>
+  <data name="EmailClaimType.HelpText" xml:space="preserve">
+    <value>Opcionálisan adja meg az identitásszolgáltató által megadott e-mail-cím-igénylés típusnevét. A tipikus érték az 'email'.</value>
+  </data>
+  <data name="EmailClaimType.Text" xml:space="preserve">
+    <value>E-mail követelés:</value>
+  </data>
+  <data name="ExternalLoginSettings.Heading" xml:space="preserve">
+    <value>Külső bejelentkezési beállítások</value>
+  </data>
+  <data name="LockoutSettings.Heading" xml:space="preserve">
+    <value>Kizárási beállítások</value>
+  </data>
+  <data name="MetadataUrl.HelpText" xml:space="preserve">
+    <value>A felderítési végpont az identitásszolgáltató metaadatainak lekéréséhez. Csak akkor adja meg, ha az identitásszolgáltató nem a szabványos megközelítést használja (azaz /.well-known/openid-configuration)</value>
+  </data>
+  <data name="MetadataUrl.Text" xml:space="preserve">
+    <value>Metaadat URL:</value>
+  </data>
+  <data name="PasswordSettings.Heading" xml:space="preserve">
+    <value>Jelszó beállítások</value>
+  </data>
+  <data name="PKCE.HelpText" xml:space="preserve">
+    <value>Jelezze, hogy az identitásszolgáltató támogatja-e a kódcseréhez szükséges bizonyítékkulcsot (PKCE)</value>
+  </data>
+  <data name="PKCE.Text" xml:space="preserve">
+    <value>PKCE-t használsz?</value>
+  </data>
+  <data name="ProviderName.HelpText" xml:space="preserve">
+    <value>Adjon meg egy barátságos nevet a külső bejelentkezési szolgáltató számára, amely a Bejelentkezés oldalon fog megjelenni</value>
+  </data>
+  <data name="ProviderName.Text" xml:space="preserve">
+    <value>Szolgáltató neve:</value>
+  </data>
+  <data name="ProviderType.HelpText" xml:space="preserve">
+    <value>Válassza ki a külső bejelentkezési szolgáltató típusát</value>
+  </data>
+  <data name="ProviderType.Text" xml:space="preserve">
+    <value>Szolgáltató típusa:</value>
+  </data>
+  <data name="RedirectUrl.HelpText" xml:space="preserve">
+    <value>Az átirányítási URL (vagy visszahívási URL), amelyet általában regisztrálni kell az identitásszolgáltatónál</value>
+  </data>
+  <data name="RedirectUrl.Text" xml:space="preserve">
+    <value>Átirányítási URL:</value>
+  </data>
+  <data name="Scopes.HelpText" xml:space="preserve">
+    <value>Az identitásszolgáltatótól kérhető hatókörök listája (vesszővel elválasztva). Ha egyik sincs megadva, akkor alapértelmezés szerint a szabványos hatóköröket használja a rendszer.</value>
+  </data>
+  <data name="Scopes.Text" xml:space="preserve">
+    <value>Alkalmazási kör:</value>
+  </data>
+  <data name="TokenUrl.HelpText" xml:space="preserve">
+    <value>A végpont a hitelesítési token megszerzéséhez</value>
+  </data>
+  <data name="TokenUrl.Text" xml:space="preserve">
+    <value>Token URL:</value>
+  </data>
+  <data name="UserInfoUrl.HelpText" xml:space="preserve">
+    <value>A felhasználói információk megszerzésének végpontja. Ennek egy API-végpontnak vagy az oldal URL-jének kell lennie, amely tartalmazza a felhasználók e-mail-címét.</value>
+  </data>
+  <data name="UserInfoUrl.Text" xml:space="preserve">
+    <value>Felhasználói adatok URL-je:</value>
+  </data>
+  <data name="Audience.HelpText" xml:space="preserve">
+    <value>Opcionálisan adja meg a token közönségét</value>
+  </data>
+  <data name="Audience.Text" xml:space="preserve">
+    <value>Közönség:</value>
+  </data>
+  <data name="UserSettings.Heading" xml:space="preserve">
+    <value>Felhasználói beállítások</value>
+  </data>
+  <data name="CookieName.HelpText" xml:space="preserve">
+    <value>Dönthet úgy, hogy minden webhelyhez egyéni hitelesítési cookie-nevet használ. Ügyeljen azonban arra, hogy ha hitelesítési cookie-t szeretne megosztani az azonos domain webhelyei között, akkor konzisztens cookie-nevet kell használniuk. Ne feledje azt is, hogy a hitelesítési cookie nevének megváltoztatásával minden jelenlegi felhasználó kijelentkezik.</value>
+  </data>
+  <data name="CookieName.Text" xml:space="preserve">
+    <value>Cookie neve:</value>
+  </data>
+  <data name="CreateToken" xml:space="preserve">
+    <value>Token létrehozása</value>
+  </data>
+  <data name="Issuer.HelpText" xml:space="preserve">
+    <value>Opcionálisan adja meg a token kibocsátóját</value>
+  </data>
+  <data name="Issuer.Text" xml:space="preserve">
+    <value>Kibocsátó:</value>
+  </data>
+  <data name="Lifetime.HelpText" xml:space="preserve">
+    <value>A percek száma, ameddig a tokennek érvényesnek kell lennie</value>
+  </data>
+  <data name="Lifetime.Text" xml:space="preserve">
+    <value>Élettartam:</value>
+  </data>
+  <data name="Secret.HelpText" xml:space="preserve">
+    <value>Ha API-hozzáférést szeretne biztosítani, kérjük, adjon meg egy titkot, amelyet a tokenek titkosításához használunk. A titoknak legalább 16 karakterből kell állnia az optimális biztonság érdekében. Kérjük, vegye figyelembe, hogy ha megváltoztatja ezt a titkot, az összes meglévő token érvénytelen lesz, és újra kell generálni.</value>
+  </data>
+  <data name="Secret.Text" xml:space="preserve">
+    <value>Titkos:</value>
+  </data>
+  <data name="Token.HelpText" xml:space="preserve">
+    <value>Válassza a Token létrehozása gombot egy hosszú élettartamú hozzáférési token létrehozásához (1 évig érvényes). Ügyeljen arra, hogy ezt a tokent biztonságos helyen tárolja, mert a jövőben nem fog tudni hozzáférni.</value>
+  </data>
+  <data name="Token.Text" xml:space="preserve">
+    <value>Jelképes:</value>
+  </data>
+  <data name="TokenSettings.Heading" xml:space="preserve">
+    <value>Token beállítások</value>
+  </data>
+  <data name="TwoFactor.HelpText" xml:space="preserve">
+    <value>Szeretné, hogy a felhasználók kétfaktoros hitelesítést alkalmazzanak? Vegye figyelembe, hogy a Letiltva opciót addig kell használnia, amíg sikeresen meg nem győződött arról, hogy az Ütemezett munkák értesítési munkája engedélyezve van, és az SMTP-beállítások be vannak állítva a Webhelybeállításokban, különben kizárja magát.</value>
+  </data>
+  <data name="TwoFactor.Text" xml:space="preserve">
+    <value>2FA-t használsz?</value>
+  </data>
+  <data name="RequireConfirmedEmail.HelpText" xml:space="preserve">
+    <value>Szeretné megkövetelni a regisztrált felhasználóktól, hogy igazolják e-mail címüket, mielőtt bejelentkezhetnek?</value>
+  </data>
+  <data name="RequireConfirmedEmail.Text" xml:space="preserve">
+    <value>Ellenőrzött e-mail-cím szükséges?</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Letiltva</value>
+  </data>
+  <data name="Optional" xml:space="preserve">
+    <value>Választható</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Kívánt</value>
+  </data>
+  <data name="LastLoginOn" xml:space="preserve">
+    <value>Utolsó bejelentkezés</value>
+  </data>
+  <data name="IdentifierClaimType.HelpText" xml:space="preserve">
+    <value>Adja meg az identitásszolgáltató által biztosított egyedi felhasználói azonosító igény típusnevét. Az alapértelmezett érték a 'sub'.</value>
+  </data>
+  <data name="IdentifierClaimType.Text" xml:space="preserve">
+    <value>Azonosító igény:</value>
+  </data>
+  <data name="Parameters.HelpText" xml:space="preserve">
+    <value>Opcionálisan adjon meg minden további paramétert név/érték párként, amelyeket el kell küldeni az identitásszolgáltatónak (ha több van, vesszővel elválasztva).</value>
+  </data>
+  <data name="Parameters.Text" xml:space="preserve">
+    <value>Paraméterek:</value>
+  </data>
+  <data name="RoleClaimType.HelpText" xml:space="preserve">
+    <value>Opcionálisan adja meg az identitásszolgáltató által biztosított szerepkörök típusnevét (a szabványos alapértelmezés a „szerepek”). Ha az identitásszolgáltató szerepkörnevei nem egyeznek pontosan a webhely szerepkörneveivel, kérjük, használja a Szerepkérelem-leképezéseket.</value>
+  </data>
+  <data name="RoleClaimType.Text" xml:space="preserve">
+    <value>Szerepkérés:</value>
+  </data>
+  <data name="RoleClaimMappings.HelpText" xml:space="preserve">
+    <value>Opcionálisan megadhatja az identitásszolgáltató által biztosított szerepnevek vesszővel tagolt listáját, valamint a webhely szerepköreihez való hozzárendeléseket. Például, ha az identitásszolgáltató tartalmaz egy „Adminisztrátor” szerepkörnevet, és azt szeretné, hogy ez az „Adminisztrátorok” webhelyszerepre legyen leképezve, meg kell adnia az „Admin:Administrators” értéket.</value>
+  </data>
+  <data name="RoleClaimMappings.Text" xml:space="preserve">
+    <value>Szerepkövetelés-leképezések:</value>
+  </data>
+  <data name="SynchronizeRoles.HelpText" xml:space="preserve">
+    <value>Ez a beállítás hozzáadja vagy eltávolítja a szerepkörök hozzárendeléseit, hogy a webhely szerepei pontosan megegyezzenek az identitásszolgáltató által a felhasználó számára biztosított szerepekkel.</value>
+  </data>
+  <data name="SynchronizeRoles.Text" xml:space="preserve">
+    <value>Szinkronizálja a szerepeket?</value>
+  </data>
+  <data name="ProfileClaimTypes.HelpText" xml:space="preserve">
+    <value>Opcionálisan megadhat egy vesszővel tagolt listát az identitásszolgáltató által biztosított felhasználói profilok követeléstípusneveiről, valamint a felhasználói profil definíciójához való hozzárendeléseket. Például, ha az identitásszolgáltató tartalmaz egy „givenname” követelést, és Ön „FirstName” felhasználói profildefinícióval rendelkezik, akkor a „givenname:FirstName” értéket kell megadnia.</value>
+  </data>
+  <data name="ProfileClaimTypes.Text" xml:space="preserve">
+    <value>Felhasználói profil állítások:</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Felhasználónév</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Név</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="ImportUsers.Text" xml:space="preserve">
+    <value>Felhasználók importálása</value>
+  </data>
+  <data name="AuthFlow.Code" xml:space="preserve">
+    <value>Engedélyezési kód</value>
+  </data>
+  <data name="AuthFlow.CodeIdToken" xml:space="preserve">
+    <value>Engedélyezési kód + azonosító token</value>
+  </data>
+  <data name="AuthFlow.CodeIdTokenToken" xml:space="preserve">
+    <value>Engedélyezési kód + azonosító token + hozzáférési token</value>
+  </data>
+  <data name="AuthFlow.CodeToken" xml:space="preserve">
+    <value>Engedélyezési kód + hozzáférési token</value>
+  </data>
+  <data name="AuthFlow.IdToken" xml:space="preserve">
+    <value>ID Token</value>
+  </data>
+  <data name="AuthFlow.IdTokenToken" xml:space="preserve">
+    <value>ID Token + hozzáférési token</value>
+  </data>
+  <data name="AuthFlow.None" xml:space="preserve">
+    <value>Egyik sem</value>
+  </data>
+  <data name="AuthFlow.Token" xml:space="preserve">
+    <value>Hozzáférési token</value>
+  </data>
+  <data name="AuthResponseType.Text" xml:space="preserve">
+    <value>Engedélyezési válasz típusa:</value>
+  </data>
+  <data name="AuthResponseType.HelpText" xml:space="preserve">
+    <value>Adja meg az engedélyezési válasz típusát. Az alapértelmezett az engedélyezési kód, amely a legbiztonságosabb opciónak tekinthető a legújabb OAuth-specifikáció alapján.</value>
+  </data>
+  <data name="VerifyUsers.HelpText" xml:space="preserve">
+    <value>Szeretné, hogy a meglévő felhasználók egy további e-mail-ellenőrzési lépést hajtsanak végre külső bejelentkezési adataik összekapcsolásához? Ha letiltja ezt az opciót, a rendszer automatikusan összekapcsolja a meglévő felhasználókat.</value>
+  </data>
+  <data name="VerifyUsers.Text" xml:space="preserve">
+    <value>Meglévő felhasználók ellenőrzése?</value>
+  </data>
+  <data name="AlwaysRemember.HelpText" xml:space="preserve">
+    <value>Ennek az opciónak az engedélyezése a Cookie lejárati idővel együtt egy állandó cookie-t állít be, amely automatikusan bejelentkezteti a felhasználókat, amikor legközelebb felkeresik az oldalt. Alapértelmezés szerint a webhely munkamenet-sütiket használ.</value>
+  </data>
+  <data name="AlwaysRemember.Text" xml:space="preserve">
+    <value>Mindig emlékszik a felhasználóra?</value>
+  </data>
+  <data name="CookieExpiration.HelpText" xml:space="preserve">
+    <value>Dönthet úgy, hogy egyéni hitelesítési süti lejárati időtartamot használ minden webhelyhez (pl. „08:00:00” 8 órán keresztül). Az alapértelmezett 14 nap, ha nincs megadva.</value>
+  </data>
+  <data name="CookieExpiration.Text" xml:space="preserve">
+    <value>Cookie lejárati idő:</value>
+  </data>
+  <data name="ReviewClaims.Text" xml:space="preserve">
+    <value>Felülvizsgálja a követeléseket?</value>
+  </data>
+  <data name="ReviewClaims.HelpText" xml:space="preserve">
+    <value>Ez az opció rögzíti a Szolgáltató által visszaküldött követelések teljes listáját az Eseménynaplóban. Csak tesztelési célokra használható. A külső bejelentkezés korlátozva lesz, ha ez az opció engedélyezve van.</value>
+  </data>
+  <data name="NameClaimType.HelpText" xml:space="preserve">
+    <value>Opcionálisan adja meg az identitásszolgáltató által biztosított felhasználónév-igénylés típusnevét. A tipikus érték a 'name'.</value>
+  </data>
+  <data name="NameClaimType.Text" xml:space="preserve">
+    <value>Névkövetelés:</value>
+  </data>
+  <data name="Provider.HelpText" xml:space="preserve">
+    <value>Válassza ki a külső bejelentkezési szolgáltatót</value>
+  </data>
+  <data name="Provider.Text" xml:space="preserve">
+    <value>Szolgáltató:</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="OAuth2" xml:space="preserve">
+    <value>OAuth 2.0 (OAuth2)</value>
+  </data>
+  <data name="OIDC" xml:space="preserve">
+    <value>OpenID Connect (OIDC)</value>
+  </data>
+  <data name="RequireNonce.Text" xml:space="preserve">
+    <value>Nonce-t igényel?</value>
+  </data>
+  <data name="RequireNonce.HelpText" xml:space="preserve">
+    <value>Adja meg, hogy szükség van-e Nonce érvényesítésre az azonosító tokenhez (az alapértelmezett érték igaz)</value>
+  </data>
+  <data name="SaveTokens.Text" xml:space="preserve">
+    <value>Menti a tokeneket?</value>
+  </data>
+  <data name="SaveTokens.HelpText" xml:space="preserve">
+    <value>Adja meg, hogy a sikeres bejelentkezés után el kell-e menteni a hozzáférési és frissítési tokeneket. Az alapértelmezett érték hamis a hitelesítési cookie méretének csökkentése érdekében.</value>
+  </data>
+  <data name="Success.DeleteUser" xml:space="preserve">
+    <value>Felhasználó sikeresen törölve</value>
+  </data>
+  <data name="Error.DeleteUser" xml:space="preserve">
+    <value>Hiba a felhasználó törlésekor</value>
+  </data>
+  <data name="LogoutEverywhere.Text" xml:space="preserve">
+    <value>Kijelentkezés mindenhol?</value>
+  </data>
+  <data name="LogoutEverywhere.HelpText" xml:space="preserve">
+    <value>Azt szeretné, hogy a felhasználók minden eszközön minden aktív munkamenetből ki legyenek jelentkezve, vagy csak az aktuális munkamenetükből?</value>
+  </data>
+  <data name="AllowHostRole.Text" xml:space="preserve">
+    <value>Engedélyezi a Gazdaszerepet?</value>
+  </data>
+  <data name="AllowHostRole.HelpText" xml:space="preserve">
+    <value>Jelezze, hogy az identitásszolgáltató támogatja-e a gazdagép szerepköröket. Kérjük, legyen óvatos ezzel a beállítással, mivel lehetővé teszi a gazdagép felhasználó számára, hogy adminisztráljon minden webhelyet a telepítésen belül.</value>
+  </data>
+  <data name="Active Users" xml:space="preserve">
+    <value>Aktív felhasználók</value>
+  </data>
+  <data name="Deleted Users" xml:space="preserve">
+    <value>Törölt felhasználók</value>
+  </data>
+  <data name="CookieDomain.Text" xml:space="preserve">
+    <value>Cookie domain:</value>
+  </data>
+  <data name="CookieDomain.HelpText" xml:space="preserve">
+    <value>Ha szeretné megosztani a cookie-kat aldomainek között, meg kell adnia egy gyökérdomaint egy kezdőponttal (pl. „.example.com”)</value>
+  </data>
+  <data name="SingleLogout.Text" xml:space="preserve">
+    <value>Egyszeri kijelentkezés engedélyezése?</value>
+  </data>
+  <data name="SingleLogout.HelpText" xml:space="preserve">
+    <value>Adja meg, hogy a felhasználókat az alkalmazásból és a szolgáltatóból is ki kell-e jelentkezni (az alapértelmezett érték hamis, ami azt jelzi, hogy csak az alkalmazásból lesznek kijelentkezve)</value>
+  </data>
+  <data name="Passkeys.Text" xml:space="preserve">
+    <value>Engedélyezi a jelszót?</value>
+  </data>
+  <data name="Passkeys.HelpText" xml:space="preserve">
+    <value>Engedélyezi a felhasználóknak, hogy jelszóval bejelentkezzenek (azaz jelszó nélküli hitelesítés WebAuthn/FIDO2 használatával)?</value>
+  </data>
+  <data name="LoginLink.Text" xml:space="preserve">
+    <value>Engedélyezi a bejelentkezési linket?</value>
+  </data>
+  <data name="LoginLink.HelpText" xml:space="preserve">
+    <value>Engedélyezi a felhasználóknak, hogy egy e-mailben küldött időérzékeny link használatával jelentkezzenek be?</value>
+  </data>
+  <data name="ProfileDisplayName.Text" xml:space="preserve">
+    <value>Profil megjelenített név:</value>
+  </data>
+  <data name="ProfileDisplayName.HelpText" xml:space="preserve">
+    <value>Opcionálisan adja meg a felhasználói profilhoz használt azonosítót (az alapértelmezett a felhasználónév)</value>
+  </data>
+</root>

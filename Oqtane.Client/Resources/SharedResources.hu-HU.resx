@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="True" xml:space="preserve">
+    <value>Igaz</value>
+  </data>
+  <data name="False" xml:space="preserve">
+    <value>Hamis</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Igen</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nem</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Frissítés</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Törlés</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
+  <data name="Admin Dashboard" xml:space="preserve">
+    <value>Rendszergazdai irányítópult</value>
+  </data>
+  <data name="User Login" xml:space="preserve">
+    <value>Felhasználói bejelentkezés</value>
+  </data>
+  <data name="User Registration" xml:space="preserve">
+    <value>Felhasználó regisztráció</value>
+  </data>
+  <data name="Password Reset" xml:space="preserve">
+    <value>Jelszó visszaállítása</value>
+  </data>
+  <data name="User Profile" xml:space="preserve">
+    <value>Felhasználói profil</value>
+  </data>
+  <data name="Site Settings" xml:space="preserve">
+    <value>Webhely beállításai</value>
+  </data>
+  <data name="Page Management" xml:space="preserve">
+    <value>Oldalkezelés</value>
+  </data>
+  <data name="User Management" xml:space="preserve">
+    <value>Felhasználókezelés</value>
+  </data>
+  <data name="Profile Management" xml:space="preserve">
+    <value>Profilkezelés</value>
+  </data>
+  <data name="Role Management" xml:space="preserve">
+    <value>Szerepmenedzsment</value>
+  </data>
+  <data name="File Management" xml:space="preserve">
+    <value>Fájlkezelés</value>
+  </data>
+  <data name="Recycle Bin" xml:space="preserve">
+    <value>Lomtár</value>
+  </data>
+  <data name="Event Log" xml:space="preserve">
+    <value>Eseménynapló</value>
+  </data>
+  <data name="Site Management" xml:space="preserve">
+    <value>Webhelykezelés</value>
+  </data>
+  <data name="Module Management" xml:space="preserve">
+    <value>Modulkezelés</value>
+  </data>
+  <data name="Theme Management" xml:space="preserve">
+    <value>Témakezelés</value>
+  </data>
+  <data name="Language Management" xml:space="preserve">
+    <value>Nyelvkezelés</value>
+  </data>
+  <data name="Scheduled Jobs" xml:space="preserve">
+    <value>Ütemezett munkák</value>
+  </data>
+  <data name="Sql Management" xml:space="preserve">
+    <value>SQL kezelés</value>
+  </data>
+  <data name="System Info" xml:space="preserve">
+    <value>Rendszerinformáció</value>
+  </data>
+  <data name="System Update" xml:space="preserve">
+    <value>Rendszerfrissítés</value>
+  </data>
+  <data name="Setting Management" xml:space="preserve">
+    <value>Beállításkezelés</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Letöltés</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Feltöltés</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Search Settings" xml:space="preserve">
+    <value>Keresési beállítások</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Keresés</value>
+  </data>
+  <data name="Search.Hint" xml:space="preserve">
+    <value>Írja be a keresési kifejezést</value>
+  </data>
+  <data name="Search.By" xml:space="preserve">
+    <value>által</value>
+  </data>
+  <data name="Search.Downloads" xml:space="preserve">
+    <value>Letöltések</value>
+  </data>
+  <data name="Search.Released" xml:space="preserve">
+    <value>Megjelenés</value>
+  </data>
+  <data name="Search.Version" xml:space="preserve">
+    <value>Változat</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Szerkesztés</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>Telepítés</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Betöltés...</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Bejelentkezés</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Név</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Jelszó:</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Elküld</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Állapot</value>
+  </data>
+  <data name="Upgrade" xml:space="preserve">
+    <value>Frissítés</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Felhasználónév</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Változat</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Hozzáadás</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Teljes név:</value>
+  </data>
+  <data name="LocalVersion" xml:space="preserve">
+    <value>Telepített verzió</value>
+  </data>
+  <data name="Search.Source" xml:space="preserve">
+    <value>Forrás</value>
+  </data>
+  <data name="Message.InfoRequired" xml:space="preserve">
+    <value>Kérjük, adja meg az összes szükséges információt</value>
+  </data>
+  <data name="Free" xml:space="preserve">
+    <value>Nyílt forráskód</value>
+  </data>
+  <data name="Paid" xml:space="preserve">
+    <value>Kereskedelmi</value>
+  </data>
+  <data name="Search.Price" xml:space="preserve">
+    <value>Ár</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Elfogadás</value>
+  </data>
+  <data name="License Not Specified" xml:space="preserve">
+    <value>Licenc nincs megadva</value>
+  </data>
+  <data name="Review License Terms" xml:space="preserve">
+    <value>Tekintse át a licencfeltételeket</value>
+  </data>
+  <data name="Trial" xml:space="preserve">
+    <value>Napi próba</value>
+  </data>
+  <data name="Expires" xml:space="preserve">
+    <value>Lejár</value>
+  </data>
+  <data name="Extend" xml:space="preserve">
+    <value>Hosszabbítás</value>
+  </data>
+  <data name="Not Specified" xml:space="preserve">
+    <value>Nincs megadva</value>
+  </data>
+  <data name="RuntimeServer" xml:space="preserve">
+    <value>Szerver (SignalR)</value>
+  </data>
+  <data name="RuntimeWebAssembly" xml:space="preserve">
+    <value>Kliens (WebAssembly)</value>
+  </data>
+  <data name="StaticServer" xml:space="preserve">
+    <value>Statikus szerver rendering</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Beállítások elemre</value>
+  </data>
+  <data name="HidePassword" xml:space="preserve">
+    <value>Elrejt</value>
+  </data>
+  <data name="ShowPassword" xml:space="preserve">
+    <value>Megmutat</value>
+  </data>
+  <data name="PageOfPages" xml:space="preserve">
+    <value>{1}/{0}. oldal</value>
+  </data>
+  <data name="Url Mappings" xml:space="preserve">
+    <value>URL-leképezések</value>
+  </data>
+  <data name="Visitor Management" xml:space="preserve">
+    <value>Látogatókezelés</value>
+  </data>
+  <data name="Oqtane.Marketplace" xml:space="preserve">
+    <value>Az &lt;a href="https://www.oqtane.net" target="new"&gt;Oqtane Marketplace&lt;/a&gt; lehetővé teszi a bővítmények zökkenőmentes letöltését és telepítését a telepítésben. A nyílt forráskódú bővítmények mindenki számára elérhetőek, azonban a kereskedelmi bővítményekhez csak érvényes felhasználói fiókkal lehet hozzáférni. Fiókokat regisztrálhat a Marketplace webhelyen, majd összekapcsolhatja az alábbi űrlap segítségével.</value>
+  </data>
+  <data name="Marketplace.Connected" xml:space="preserve">
+    <value>A telepítés sikeresen csatlakozott a piactérhez</value>
+  </data>
+  <data name="Marketplace.Disconnected" xml:space="preserve">
+    <value>Felhívjuk figyelmét, hogy a Kereskedelmi bővítmények eléréséhez meg kell adnia felhasználói fiókját a Piactér lapon</value>
+  </data>
+  <data name="Marketplace.Validation" xml:space="preserve">
+    <value>Felhasználói fiókját nem sikerült érvényesíteni. Kérjük, ellenőrizze, hogy a Marketplace e-mail-címe és jelszava helyes-e.</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Otthon</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Közeli</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>RENDBEN</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Alkalmazni</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Válassza ki</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Következő</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Előző</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Beküld</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Frissítés</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Vissza</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>Visszatérés</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Új</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Kilátás</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Erősítse meg</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Segítség</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Támogatás</value>
+  </data>
+  <data name="Search.Alphabetical" xml:space="preserve">
+    <value>Betűrendes</value>
+  </data>
+  <data name="Buy" xml:space="preserve">
+    <value>Vásároljon most</value>
+  </data>
+  <data name="Search.Popularity" xml:space="preserve">
+    <value>Népszerűség</value>
+  </data>
+  <data name="Search.Results" xml:space="preserve">
+    <value>Eredmények</value>
+  </data>
+  <data name="Search.RecentlyReleased" xml:space="preserve">
+    <value>Nemrég Megjelent</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>Tól</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="Password.DigitRequirement" xml:space="preserve">
+    <value>Legalább egy számjegy</value>
+  </data>
+  <data name="Password.LowercaseRequirement" xml:space="preserve">
+    <value>Legalább egy kisbetű</value>
+  </data>
+  <data name="Password.PunctuationRequirement" xml:space="preserve">
+    <value>Legalább egy írásjel</value>
+  </data>
+  <data name="Password.UppercaseRequirement" xml:space="preserve">
+    <value>Legalább egy nagybetű</value>
+  </data>
+  <data name="Password.ValidationCriteria" xml:space="preserve">
+    <value>A jelszavaknak legalább {0} karakter hosszúságúnak kell lenniük, beleértve legalább {1} egyedi karaktert, {2}{3}{4}{5}, hogy megfeleljenek a webhely jelszavaival kapcsolatos összetettségi követelményeknek.</value>
+  </data>
+  <data name="ProfileInvalid" xml:space="preserve">
+    <value>{0} nem érvényes</value>
+  </data>
+  <data name="ProfileRequired" xml:space="preserve">
+    <value>{0} szükséges</value>
+  </data>
+  <data name="Uninstall" xml:space="preserve">
+    <value>Eltávolítás</value>
+  </data>
+  <data name="Test" xml:space="preserve">
+    <value>Teszt</value>
+  </data>
+  <data name="Message.EffectiveExpiryDateError" xml:space="preserve">
+    <value>A hatálybalépés dátuma nem lehet a lejárati dátum után.</value>
+  </data>
+  <data name="RuntimeAuto" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="RenderModeHeadless" xml:space="preserve">
+    <value>Fej nélküli (csak API)</value>
+  </data>
+  <data name="RenderModeInteractive" xml:space="preserve">
+    <value>Interaktív</value>
+  </data>
+  <data name="RenderModeStatic" xml:space="preserve">
+    <value>Statikus</value>
+  </data>
+  <data name="Disabled" xml:space="preserve">
+    <value>Letiltva</value>
+  </data>
+  <data name="Enabled" xml:space="preserve">
+    <value>Engedélyezve</value>
+  </data>
+  <data name="Module" xml:space="preserve">
+    <value>Modul</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>oldal</value>
+  </data>
+  <data name="Site" xml:space="preserve">
+    <value>Telek</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Felhasználó</value>
+  </data>
+  <data name="Path" xml:space="preserve">
+    <value>Útvonal</value>
+  </data>
+  <data name="Installed" xml:space="preserve">
+    <value>Telepítve</value>
+  </data>
+  <data name="Global Replace" xml:space="preserve">
+    <value>Globális csere</value>
+  </data>
+</root>

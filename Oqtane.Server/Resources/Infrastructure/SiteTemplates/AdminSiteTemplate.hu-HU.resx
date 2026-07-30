@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Privacy" xml:space="preserve">
+    <value>&lt;p&gt;Ez az adatvédelmi szabályzat ("irányelv") segít megérteni, hogy a [PageState:Site:Name] ("mi", "mi", "miénk") hogyan használja és védi az Ön által a webhely meglátogatásakor és használatakor megadott adatokat.&lt;/p&gt;
+
+&lt;p&gt;Fenntartjuk a jogot ezen irányelvek bármikori megváltoztatására. Ha szeretne megbizonyosodni arról, hogy naprakész a legújabb változásokkal, javasoljuk, hogy gyakran látogassa meg ezt az oldalt.&lt;/p&gt;
+
+&lt;h2&gt;Milyen felhasználói adatokat gyűjtünk&lt;/h2&gt;
+
+&lt;p&gt;Amikor meglátogatja ezt a webhelyet, a következő adatokat gyűjthetjük: az Ön IP-címe, kapcsolatfelvételi adatai és e-mail címe, egyéb információk, például érdeklődési körök és preferenciák.&lt;/p&gt;
+
+&lt;h2&gt;Miért gyűjtjük az Ön adatait&lt;/h2&gt;
+
+&lt;p&gt;Az Ön adatait több okból is gyűjtjük: az Ön igényeinek jobb megértése, termékeink és szolgáltatásaink fejlesztése érdekében, hogy promóciós e-maileket küldjünk Önnek az általunk érdekesnek tartott információkat tartalmazó e-mailekben, hogy testreszabhassuk webhelyünket az Ön online viselkedésének és személyes preferenciáinak megfelelően.&lt;/p&gt;
+
+&lt;h2&gt;Az adatok védelme és védelme&lt;/h2&gt;
+
+&lt;p&gt;A [PageState:Site:Name] elkötelezett az Ön adatainak védelme és bizalmas kezelése mellett. [PageState:Site:Name] minden tőle telhetőt megtett annak érdekében, hogy megakadályozza az adatlopást, az illetéktelen hozzáférést és a nyilvánosságra hozatalt a legújabb technológiák és szoftverek bevezetésével, amelyek segítenek megőrizni az online gyűjtött összes információt.&lt;/p&gt;
+
+&lt;h2&gt;Cookie-szabályzatunk&lt;/h2&gt;
+
+&lt;p&gt;Ha beleegyezik abba, hogy webhelyünk cookie-kat használjon, akkor beleegyezik abba is, hogy felhasználjuk az általa az Ön online viselkedésére vonatkozó adatokat (a webforgalom elemzése, a meglátogatott és a legtöbb időt töltött weboldalak stb.).&lt;/p&gt;
+
+&lt;p&gt;A cookie-k használatával gyűjtött adatokat arra használjuk, hogy webhelyünket az Ön igényeihez igazítsuk.&lt;/p&gt;
+
+&lt;p&gt;Kérjük, vegye figyelembe, hogy a cookie-k semmilyen módon nem teszik lehetővé számunkra, hogy hozzáférjünk az Ön számítógépéhez. Szigorúan arra szolgálnak, hogy figyelemmel kísérjék, mely oldalakat találja hasznosnak és melyeket nem, hogy jobb élményt nyújthassunk Önnek.&lt;/p&gt;
+
+&lt;p&gt;Ha szeretné letiltani vagy eltávolítani a cookie-kat, ezt megteheti internetböngészője beállításaiban.&lt;/p&gt;
+
+&lt;h2&gt;Más webhelyekre mutató hivatkozások&lt;/h2&gt;
+
+&lt;p&gt;Webhelyünk olyan hivatkozásokat tartalmaz, amelyek más webhelyekre vezetnek. Ha ezekre a linkekre kattint, a [PageState:Site:Name] nem vállal felelősséget az Ön adatainak és magánéletének védelméért. Az ilyen webhelyek látogatására nem vonatkozik ez az adatvédelmi megállapodás. Feltétlenül olvassa el minden olyan webhely adatvédelmi szabályzatát, amelyre a webhelyünkről navigál.&lt;/p&gt;
+
+&lt;h2&gt;Személyes adatai gyűjtésének korlátozása&lt;/h2&gt;
+
+&lt;p&gt;Előfordulhat, hogy egy bizonyos ponton korlátozni szeretné személyes adatainak felhasználását és gyűjtését. Ha korábban beleegyezett abba, hogy megosztja velünk adatait, nyugodtan vegye fel velünk a kapcsolatot e-mailben, és örömmel változtatunk ezen az Ön helyett.&lt;/p&gt;
+
+&lt;p&gt;A [PageState:Site:Name] az Ön engedélye nélkül nem adja bérbe, nem adja el vagy továbbítja az Ön személyes adatait harmadik félnek. Személyes adatait csak akkor használjuk fel, ha promóciós anyagokat kell küldenünk Önnek, ha elfogadja ezt az adatvédelmi szabályzatot.&lt;/p&gt;</value>
+  </data>
+  <data name="Terms" xml:space="preserve">
+    <value>&lt;p&gt;Kérjük, figyelmesen olvassa el ezeket a feltételeket, mielőtt a [PageState:Site:Name] ("mi", "mi", "mieink") által üzemeltetett webhelyet használná.&lt;/p&gt;
+
+&lt;h2&gt;Használati feltételek&lt;/h2&gt;
+
+&lt;p&gt;A webhely használatával Ön igazolja, hogy elolvasta és áttekintette a jelen Szerződést, és elfogadja annak feltételeit. Ha nem kívánja magára nézve kötelezőnek tekinteni a jelen Szerződés feltételeit, javasoljuk, hogy ennek megfelelően hagyja abba a webhely használatát. A [PageState:Site:Name] csak azoknak ad hozzáférést és hozzáférést a webhelyhez, termékeihez és szolgáltatásaihoz, akik elfogadták a feltételeket.&lt;/p&gt;
+
+&lt;h2&gt;Adatvédelmi irányelvek&lt;/h2&gt;
+
+&lt;p&gt;Mielőtt folytatná webhelyünk használatát, javasoljuk, hogy olvassa el a felhasználói adatgyűjtésünkre vonatkozó &lt;a href="/privacy"&gt;adatvédelmi irányelveinket&lt;/a&gt;. Ez segít jobban megérteni gyakorlatunkat.&lt;/p&gt;
+
+&lt;h2&gt;Szellemi tulajdon&lt;/h2&gt;
+
+&lt;p&gt;Ön elfogadja, hogy az ezen a webhelyen biztosított minden anyag, termék és szolgáltatás a [PageState:Site:Name], leányvállalatai, igazgatói, tisztviselői, alkalmazottai, ügynökei, szállítói vagy licencadói tulajdonát képezi, beleértve az összes szerzői jogot, üzleti titkot, védjegyet, szabadalmat és egyéb szellemi tulajdont. Ön beleegyezik abba is, hogy semmilyen módon nem reprodukálja vagy terjeszti a [PageState:Site:Name] szellemi tulajdonát, beleértve az elektronikus, digitális vagy új védjegyregisztrációkat.&lt;/p&gt;
+
+&lt;p&gt;Ön jogdíjmentes és nem kizárólagos licencet biztosít a [PageState:Site:Name] számára az Ön által feltöltött és közzétett tartalom megjelenítésére, használatára, másolására, továbbítására és sugárzására. A szellemi tulajdonjoggal kapcsolatos követelésekkel kapcsolatos kérdésekben vegye fel velünk a kapcsolatot a megegyezés érdekében.&lt;/p&gt;
+
+&lt;h2&gt;Felhasználói fiókok&lt;/h2&gt;
+
+&lt;p&gt;A webhely felhasználójaként felkérhetik Önt, hogy regisztráljon nálunk, és adjon meg személyes adatokat. Ön felelős ezen információk pontosságának biztosításáért, valamint az Ön azonosító adatainak biztonságáért.&lt;/p&gt;
+
+&lt;p&gt;Te is felelős minden olyan tevékenységért, amely fiókja vagy jelszava alatt történik. Ha úgy gondolja, hogy bármilyen lehetséges probléma adódhat fiókja biztonságával kapcsolatban a webhelyen, haladéktalanul értesítsen bennünket, hogy megfelelően kezelhessük.&lt;/p&gt;
+
+&lt;p&gt;Fenntartunk minden jogot a fiókok megszüntetésére, a tartalom szerkesztésére vagy eltávolítására, valamint a rendelések törlésére saját belátásunk szerint.&lt;/p&gt;
+
+&lt;h2&gt;Alkalmazandó jog&lt;/h2&gt;
+
+&lt;p&gt;A webhely használatával Ön elfogadja, hogy a [PageState:Site:Name]-hoz kapcsolódó joghatóság törvényei, a kollíziós törvények elveire való tekintet nélkül, irányadóak ezekre a feltételekre, illetve minden olyan vitára, amely a [PageState:Site:Name] és Ön vagy üzleti partnerei és munkatársai között felmerülhet.&lt;/p&gt;
+
+&lt;h2&gt;Viták&lt;/h2&gt;
+
+&lt;p&gt;A webhely használatával vagy a tőlünk vásárolt termékekkel kapcsolatos bármely vitát bíróság dönti el, és Ön beleegyezik az ilyen bíróságok kizárólagos joghatóságába és helyszínébe.&lt;/p&gt;
+
+&lt;h2&gt;Kártalanítás&lt;/h2&gt;
+
+&lt;p&gt;Ön beleegyezik abba, hogy kártalanítja a [PageState:Site:Name]-t és leányvállalatait, és ártalmatlanná teszi a [PageState:Site:Name]-t azokkal a jogi követelésekkel és követelésekkel szemben, amelyek a szolgáltatásaink használatából vagy visszaéléséből fakadhatnak. Fenntartjuk a jogot, hogy saját jogi tanácsadónkat válasszuk ki.&lt;/p&gt;
+
+&lt;h2&gt;Felelősségkorlátozás&lt;/h2&gt;
+
+&lt;p&gt;A [PageState:Site:Name] nem vállal felelősséget a webhelyünkkel való visszaélésből eredő károkért. [PageState:Site:Name] fenntartja a jogot a jelen Szerződés bármikori szerkesztésére, módosítására és módosítására. Ezekről a változásokról e-mailben értesítjük felhasználóinkat. Ez a Megállapodás a [PageState:Site:Name] és a felhasználó közötti megállapodás, amely felülír és felvált minden, a webhely használatával kapcsolatos korábbi megállapodást.&lt;/p&gt;</value>
+  </data>
+</root>

@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name.Text" xml:space="preserve">
+    <value>Név: </value>
+  </data>
+  <data name="Container.Select" xml:space="preserve">
+    <value>Válassza a Tároló lehetőséget</value>
+  </data>
+  <data name="Error.Theme.LoadPane" xml:space="preserve">
+    <value>Hiba a téma panel-elrendezéseinek betöltésekor</value>
+  </data>
+  <data name="DefaultContainer.Text" xml:space="preserve">
+    <value>Alapértelmezett tároló: </value>
+  </data>
+  <data name="DefaultAdminContainer" xml:space="preserve">
+    <value>Alapértelmezett rendszergazdai tároló</value>
+  </data>
+  <data name="Smtp.TestConfig" xml:space="preserve">
+    <value>Tesztelje az SMTP konfigurációt</value>
+  </data>
+  <data name="Success.Settings.SaveSite" xml:space="preserve">
+    <value>A webhely beállításai elmentve</value>
+  </data>
+  <data name="Message.Aliases.Taken" xml:space="preserve">
+    <value>Olyan álnevet adtak meg, amelyet már használtak egy másik webhelyhez</value>
+  </data>
+  <data name="Message.Required.SiteName" xml:space="preserve">
+    <value>Meg kell adnia a webhely nevét, az álnevet és az alapértelmezett témát/tárolót</value>
+  </data>
+  <data name="Error.SaveSite" xml:space="preserve">
+    <value>Hiba a webhely mentése közben</value>
+  </data>
+  <data name="Info.Smtp.SaveSettings" xml:space="preserve">
+    <value>Az SMTP beállítások elmentve, és üzenetet küldtek a felhasználói fiókjához társított e-mail címre... Kérjük, várjon néhány percet a kézbesítésig. Ha nem kapja meg az e-mailt, kérjük, tekintse át az értesítési munkát az ütemezett munkáknál a napló részleteiért.</value>
+  </data>
+  <data name="Error.Smtp.TestConfig" xml:space="preserve">
+    <value>Hiba az SMTP konfiguráció tesztelése során</value>
+  </data>
+  <data name="Message.Required.Smtp" xml:space="preserve">
+    <value>Meg kell adnia az SMTP gazdagépet, portot és feladót</value>
+  </data>
+  <data name="Name.HelpText" xml:space="preserve">
+    <value>Írja be a webhely nevét</value>
+  </data>
+  <data name="Tenant.HelpText" xml:space="preserve">
+    <value>A webhelyhez használt adatbázis neve. Vegye figyelembe, hogy ez nem a fizikai adatbázisnév, hanem a bérlő neve, amelyet a keretrendszeren belül az adatbázis azonosítására használnak.</value>
+  </data>
+  <data name="Aliases.HelpText" xml:space="preserve">
+    <value>Az oldal URL-jei. Ide tartozhatnak a domain nevek (pl. domain.com), aldomainek (pl. al.domain.com) vagy virtuális mappák (pl. domain.com/mappa).</value>
+  </data>
+  <data name="IsDeleted.HelpText" xml:space="preserve">
+    <value>Ez az oldal törölve?</value>
+  </data>
+  <data name="Logo.HelpText" xml:space="preserve">
+    <value>Adjon meg egy logót a webhelyhez</value>
+  </data>
+  <data name="FavoriteIcon.HelpText" xml:space="preserve">
+    <value>Adjon meg egy Favicont. A kép formátumának 16 × 16, 32 × 32, 48 × 48 vagy 64 × 64 képpont méretűnek, valamint 8 bites, 24 bites vagy 32 bites színmélységűnek kell lennie. A kép formátumának ICO, PNG vagy GIF kell lennie.</value>
+  </data>
+  <data name="DefaultTheme.HelpText" xml:space="preserve">
+    <value>Válassza ki a webhelyek alapértelmezett témáját</value>
+  </data>
+  <data name="DefaultContainer.HelpText" xml:space="preserve">
+    <value>Válassza ki a webhely alapértelmezett tárolóját</value>
+  </data>
+  <data name="DefaultAdminContainer.HelpText" xml:space="preserve">
+    <value>Válassza ki a webhely alapértelmezett rendszergazdai tárolóját</value>
+  </data>
+  <data name="Host.HelpText" xml:space="preserve">
+    <value>Adja meg az SMTP-kiszolgáló gazdagépnevét</value>
+  </data>
+  <data name="Port.HelpText" xml:space="preserve">
+    <value>Adja meg az SMTP-szerver portszámát. Kérjük, vegye figyelembe, hogy ezt a mezőt kötelező kitölteni, ha megad egy gazdagépnevet.</value>
+  </data>
+  <data name="SmtpSSL.HelpText" xml:space="preserve">
+    <value>Adja meg az SMTP-kiszolgáló SSL-kapcsolatának típusát</value>
+  </data>
+  <data name="SmtpUsername.HelpText" xml:space="preserve">
+    <value>Adja meg SMTP-fiókja felhasználónevét</value>
+  </data>
+  <data name="SmtpPassword.HelpText" xml:space="preserve">
+    <value>Adja meg SMTP-fiókja jelszavát</value>
+  </data>
+  <data name="SmtpSender.HelpText" xml:space="preserve">
+    <value>Adja meg azt az e-mail címet, amelyről az e-maileket küldi. Kérjük, vegye figyelembe, hogy ezt az e-mail címet általában engedélyezni kell az SMTP-szerverrel.</value>
+  </data>
+  <data name="EnablePWA.HelpText" xml:space="preserve">
+    <value>Válassza ki, hogy szeretné-e ezt a webhelyet Progresszív webalkalmazásként (PWA) elérni</value>
+  </data>
+  <data name="PwaApplicationIcon.HelpText" xml:space="preserve">
+    <value>Adjon meg egy alkalmazásikont a PWA-hoz. PNG-nek kell lennie, amelynek mérete 192 x 192 pixel.</value>
+  </data>
+  <data name="PwaSplashIcon.HelpText" xml:space="preserve">
+    <value>Szereljen be egy splash ikont a PWA-hoz. PNG-nek kell lennie, amelynek mérete 512 x 512 pixel.</value>
+  </data>
+  <data name="Tenant.Text" xml:space="preserve">
+    <value>Adatbázis: </value>
+  </data>
+  <data name="Aliases.Text" xml:space="preserve">
+    <value>URL-ek:</value>
+  </data>
+  <data name="IsDeleted.Text" xml:space="preserve">
+    <value>Törölve? </value>
+  </data>
+  <data name="Logo.Text" xml:space="preserve">
+    <value>Logó: </value>
+  </data>
+  <data name="FavoriteIcon.Text" xml:space="preserve">
+    <value>Favicon: </value>
+  </data>
+  <data name="DefaultTheme.Text" xml:space="preserve">
+    <value>Alapértelmezett téma: </value>
+  </data>
+  <data name="DefaultAdminContainer.Text" xml:space="preserve">
+    <value>Alapértelmezett rendszergazdai tároló: </value>
+  </data>
+  <data name="Host.Text" xml:space="preserve">
+    <value>Házigazda: </value>
+  </data>
+  <data name="Port.Text" xml:space="preserve">
+    <value>Kikötő: </value>
+  </data>
+  <data name="SmtpSSL.Text" xml:space="preserve">
+    <value>SSL opciók:</value>
+  </data>
+  <data name="SmtpUsername.Text" xml:space="preserve">
+    <value>Felhasználónév: </value>
+  </data>
+  <data name="SmtpPassword.Text" xml:space="preserve">
+    <value>Jelszó: </value>
+  </data>
+  <data name="SmtpSender.Text" xml:space="preserve">
+    <value>E-mail feladó: </value>
+  </data>
+  <data name="EnablePWA.Text" xml:space="preserve">
+    <value>Engedélyezve? </value>
+  </data>
+  <data name="PwaApplicationIcon.Text" xml:space="preserve">
+    <value>Alkalmazás ikon: </value>
+  </data>
+  <data name="PwaSplashIcon.Text" xml:space="preserve">
+    <value>Splash ikon: </value>
+  </data>
+  <data name="Confirm.DeleteSite" xml:space="preserve">
+    <value>Biztos, hogy törölni szeretné ezt a webhelyet?</value>
+  </data>
+  <data name="Error.DeleteSite" xml:space="preserve">
+    <value>Hiba a webhely törlésekor</value>
+  </data>
+  <data name="Message.FailAuth.DeleteSite" xml:space="preserve">
+    <value>Ön nem jogosult a webhely törlésére</value>
+  </data>
+  <data name="Theme.Select" xml:space="preserve">
+    <value>Válassza a Témát</value>
+  </data>
+  <data name="Hosting.Heading" xml:space="preserve">
+    <value>UI komponens beállításai</value>
+  </data>
+  <data name="Prerender.HelpText" xml:space="preserve">
+    <value>Megadja, hogy az interaktív összetevőknek előrenderelniük kell-e kimenetüket a szerveren</value>
+  </data>
+  <data name="Prerender.Text" xml:space="preserve">
+    <value>Előrenderelés: </value>
+  </data>
+  <data name="RenderMode.HelpText" xml:space="preserve">
+    <value>A webhely alapértelmezett megjelenítési módja</value>
+  </data>
+  <data name="RenderMode.Text" xml:space="preserve">
+    <value>Renderelési mód:</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Tallózás</value>
+  </data>
+  <data name="TenantInformation.Heading" xml:space="preserve">
+    <value>Adatbázis</value>
+  </data>
+  <data name="PWASettings.Heading" xml:space="preserve">
+    <value>PWA beállítások</value>
+  </data>
+  <data name="SMTPSettings.Heading" xml:space="preserve">
+    <value>SMTP beállítások</value>
+  </data>
+  <data name="ConnectionString.Text" xml:space="preserve">
+    <value>Kapcsolat:</value>
+  </data>
+  <data name="Database.Text" xml:space="preserve">
+    <value>Típus:</value>
+  </data>
+  <data name="ConnectionString.HelpText" xml:space="preserve">
+    <value>Az appsettings.json fájlban található kapcsolati karakterlánc neve, amelyet az adatbázishoz való csatlakozáshoz használunk</value>
+  </data>
+  <data name="Database.HelpText" xml:space="preserve">
+    <value>Az adatbázis típusa</value>
+  </data>
+  <data name="DeleteSite.Header" xml:space="preserve">
+    <value>Webhely törlése</value>
+  </data>
+  <data name="DeleteSite.Text" xml:space="preserve">
+    <value>Webhely törlése</value>
+  </data>
+  <data name="DefaultAlias.HelpText" xml:space="preserve">
+    <value>A webhely alapértelmezett álneve. A nem alapértelmezett álnevekre vonatkozó kérések az alapértelmezett álnévre lesznek átirányítva.</value>
+  </data>
+  <data name="DefaultAlias.Text" xml:space="preserve">
+    <value>Alapértelmezett?</value>
+  </data>
+  <data name="Aliases.Heading" xml:space="preserve">
+    <value>Webhely URL-ek</value>
+  </data>
+  <data name="AliasName.Text" xml:space="preserve">
+    <value>URL:</value>
+  </data>
+  <data name="Default" xml:space="preserve">
+    <value>Alapértelmezett</value>
+  </data>
+  <data name="Confirm.Alias.Delete" xml:space="preserve">
+    <value>Biztos benne, hogy törölni szeretné a következőt: {0}?</value>
+  </data>
+  <data name="HomePage.HelpText" xml:space="preserve">
+    <value>Válassza ki a webhely kezdőlapját (akkor kell használni, ha nincs '/' elérési úttal rendelkező oldal)</value>
+  </data>
+  <data name="HomePage.Text" xml:space="preserve">
+    <value>Kezdőlap:</value>
+  </data>
+  <data name="SiteMap.HelpText" xml:space="preserve">
+    <value>A webhely térképének URL-címe, amelyet indexelés céljából el lehet küldeni a keresőmotoroknak. A webhelytérkép 5 percig gyorsítótárban van, és a gyorsítótár manuálisan törölhető.</value>
+  </data>
+  <data name="SiteMap.Text" xml:space="preserve">
+    <value>Oldaltérkép:</value>
+  </data>
+  <data name="Appearance.Heading" xml:space="preserve">
+    <value>Megjelenés</value>
+  </data>
+  <data name="HeadContent.HelpText" xml:space="preserve">
+    <value>Opcionálisan adjon meg tartalmat az oldal fejlécében (pl. meta-, link- vagy szkriptcímkék)</value>
+  </data>
+  <data name="HeadContent.Text" xml:space="preserve">
+    <value>A fej tartalma:</value>
+  </data>
+  <data name="BodyContent.HelpText" xml:space="preserve">
+    <value>Opcionálisan adjon meg tartalmat, amelyet az oldal törzsébe kíván beilleszteni (pl. szkriptcímkék)</value>
+  </data>
+  <data name="BodyContent.Text" xml:space="preserve">
+    <value>Testtartalom:</value>
+  </data>
+  <data name="PageContent.Heading" xml:space="preserve">
+    <value>Oldal tartalma</value>
+  </data>
+  <data name="SmtpEnabled.HelpText" xml:space="preserve">
+    <value>Adja meg, hogy az SMTP engedélyezve van-e ezen a webhelyen</value>
+  </data>
+  <data name="SmtpEnabled.Text" xml:space="preserve">
+    <value>Engedélyezve?</value>
+  </data>
+  <data name="Version.HelpText" xml:space="preserve">
+    <value>A webhely verziója (webhelytartalom-migráció esetén)</value>
+  </data>
+  <data name="Version.Text" xml:space="preserve">
+    <value>Változat:</value>
+  </data>
+  <data name="DeleteAlias.Text" xml:space="preserve">
+    <value>Töröl</value>
+  </data>
+  <data name="DeleteAlias.Header" xml:space="preserve">
+    <value>Alias ​​törlése</value>
+  </data>
+  <data name="SiteGuid.HelpText" xml:space="preserve">
+    <value>A webhely egyedi azonosítója</value>
+  </data>
+  <data name="SiteGuid.Text" xml:space="preserve">
+    <value>ID:</value>
+  </data>
+  <data name="Retention.HelpText" xml:space="preserve">
+    <value>A megőrzendő értesítések napjainak száma</value>
+  </data>
+  <data name="Retention.Text" xml:space="preserve">
+    <value>Megtartás (napok):</value>
+  </data>
+  <data name="HybridEnabled.HelpText" xml:space="preserve">
+    <value>Megadja, hogy a webhely integrálható-e külső .NET MAUI hibrid alkalmazással</value>
+  </data>
+  <data name="HybridEnabled.Text" xml:space="preserve">
+    <value>Hibrid engedélyezése?</value>
+  </data>
+  <data name="Runtime.HelpText" xml:space="preserve">
+    <value>Az interaktivitást igénylő felhasználói felület-összetevők tárhelymodellje</value>
+  </data>
+  <data name="Runtime.Text" xml:space="preserve">
+    <value>Interaktivitás:</value>
+  </data>
+  <data name="TextEditor.HelpText" xml:space="preserve">
+    <value>Válassza ki a webhely szövegszerkesztőjét</value>
+  </data>
+  <data name="TextEditor.Text" xml:space="preserve">
+    <value>Szövegszerkesztő:</value>
+  </data>
+  <data name="Functionality" xml:space="preserve">
+    <value>Funkcionalitás</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>Rendszer</value>
+  </data>
+  <data name="CookieConsent.HelpText" xml:space="preserve">
+    <value>Adja meg, hogy a cookie-k beleegyezése engedélyezett-e ezen a webhelyen. Kérjük, vegye figyelembe, hogy ezt a lehetőséget olyan témával együtt kell használni, amely támogatja a cookie-k engedélyezését.</value>
+  </data>
+  <data name="CookieConsent.Text" xml:space="preserve">
+    <value>Cookie-hoz való hozzájárulás:</value>
+  </data>
+  <data name="OptIn" xml:space="preserve">
+    <value>Feliratkozás (GDPR)</value>
+  </data>
+  <data name="OptOut" xml:space="preserve">
+    <value>Leiratkozás (CCPA)</value>
+  </data>
+  <data name="Theme.Heading" xml:space="preserve">
+    <value>Téma</value>
+  </data>
+  <data name="SiteMap.EvictCache" xml:space="preserve">
+    <value>Törölje a gyorsítótárat</value>
+  </data>
+  <data name="Success.SiteMap.CacheEvicted" xml:space="preserve">
+    <value>A webhelytérkép gyorsítótára törölve</value>
+  </data>
+  <data name="TimeZone.Text" xml:space="preserve">
+    <value>Időzóna:</value>
+  </data>
+  <data name="TimeZone.HelpText" xml:space="preserve">
+    <value>A webhely alapértelmezett időzónája</value>
+  </data>
+  <data name="Basic" xml:space="preserve">
+    <value>Alapvető</value>
+  </data>
+  <data name="OAuth2" xml:space="preserve">
+    <value>OAuth 2.0 (OAuth2)</value>
+  </data>
+  <data name="SmtpAuthentication.Text" xml:space="preserve">
+    <value>Hitelesítés:</value>
+  </data>
+  <data name="SmtpAuthentication.HelpText" xml:space="preserve">
+    <value>Adja meg az SMTP hitelesítés típusát</value>
+  </data>
+  <data name="SmtpClientID.Text" xml:space="preserve">
+    <value>Ügyfél azonosító:</value>
+  </data>
+  <data name="SmtpClientID.HelpText" xml:space="preserve">
+    <value>Az SMTP-szolgáltató ügyfélazonosítója</value>
+  </data>
+  <data name="SmtpClientSecret.Text" xml:space="preserve">
+    <value>Ügyfél titka:</value>
+  </data>
+  <data name="SmtpClientSecret.HelpText" xml:space="preserve">
+    <value>Az SMTP-szolgáltató ügyféltitka</value>
+  </data>
+  <data name="SmtpScopes.Text" xml:space="preserve">
+    <value>Alkalmazási kör:</value>
+  </data>
+  <data name="SmtpScopes.HelpText" xml:space="preserve">
+    <value>Az SMTP-szolgáltató hatóköreinek listája (vesszővel elválasztva)</value>
+  </data>
+  <data name="SmtpAuthority.Text" xml:space="preserve">
+    <value>Hatósági URL:</value>
+  </data>
+  <data name="SmtpAuthority.HelpText" xml:space="preserve">
+    <value>Az SMTP-szolgáltató hatósági URL-je</value>
+  </data>
+  <data name="None" xml:space="preserve">
+    <value>Egyik sem</value>
+  </data>
+  <data name="Auto" xml:space="preserve">
+    <value>Automatikus</value>
+  </data>
+  <data name="StartTls" xml:space="preserve">
+    <value>Frissítés TLS-re</value>
+  </data>
+  <data name="SslOnConnect" xml:space="preserve">
+    <value>SSL/TLS szükséges</value>
+  </data>
+  <data name="StartTlsWhenAvailable" xml:space="preserve">
+    <value>Használja a TLS-t, amikor elérhető</value>
+  </data>
+  <data name="AliasName.HelpText" xml:space="preserve">
+    <value>Az oldal URL-je. Ide tartozhatnak a domain nevek (pl. domain.com), aldomainek (pl. al.domain.com) vagy virtuális mappák (pl. domain.com/mappa).</value>
+  </data>
+  <data name="SiteGroupMembers.Text" xml:space="preserve">
+    <value>Csoport:</value>
+  </data>
+  <data name="SiteGroupMembers.HelpText" xml:space="preserve">
+    <value>A bérlő webhelycsoportjai (adatbázis)</value>
+  </data>
+  <data name="Primary.Text" xml:space="preserve">
+    <value>Elsődleges?</value>
+  </data>
+  <data name="Primary.HelpText" xml:space="preserve">
+    <value>Azt jelzi, hogy a kiválasztott tag a helycsoport elsődleges helye</value>
+  </data>
+  <data name="GroupName.Text" xml:space="preserve">
+    <value>Név:</value>
+  </data>
+  <data name="GroupName.HelpText" xml:space="preserve">
+    <value>A webhelycsoport neve</value>
+  </data>
+  <data name="Primary" xml:space="preserve">
+    <value>Elsődleges</value>
+  </data>
+  <data name="Secondary" xml:space="preserve">
+    <value>Másodlagos</value>
+  </data>
+  <data name="Compare" xml:space="preserve">
+    <value>Hasonlítsa össze</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Frissítés</value>
+  </data>
+  <data name="DeleteSiteGroupMember.Header" xml:space="preserve">
+    <value>Webhelycsoport-tag törlése</value>
+  </data>
+  <data name="Confirm.SiteGroupMember.Delete" xml:space="preserve">
+    <value>Biztos, hogy törölni szeretné ezt a tagot a webhelycsoportból?</value>
+  </data>
+  <data name="Message.Required.GroupName" xml:space="preserve">
+    <value>A webhelycsoport neve kötelező</value>
+  </data>
+  <data name="Message.Site.Synchronize" xml:space="preserve">
+    <value>A webhely szinkronizálásra elküldve</value>
+  </data>
+  <data name="Site.Text" xml:space="preserve">
+    <value>Tagok:</value>
+  </data>
+  <data name="Site.HelpText" xml:space="preserve">
+    <value>Azok a webhelyek, amelyek ennek a webhelycsoportnak a tagjai</value>
+  </data>
+  <data name="Synchronized.Text" xml:space="preserve">
+    <value>Szinkronizált:</value>
+  </data>
+  <data name="GroupType.Text" xml:space="preserve">
+    <value>Típus:</value>
+  </data>
+  <data name="GroupType.HelpText" xml:space="preserve">
+    <value>Meghatározza a webhelycsoport konkrét viselkedését</value>
+  </data>
+  <data name="Synchronized.HelpText" xml:space="preserve">
+    <value>A webhely utolsó szinkronizálásának dátuma/időpontja</value>
+  </data>
+  <data name="Synchronization" xml:space="preserve">
+    <value>Szinkronizálás</value>
+  </data>
+  <data name="Localization" xml:space="preserve">
+    <value>Lokalizáció</value>
+  </data>
+  <data name="ChangeDetection" xml:space="preserve">
+    <value>Változásérzékelés</value>
+  </data>
+</root>

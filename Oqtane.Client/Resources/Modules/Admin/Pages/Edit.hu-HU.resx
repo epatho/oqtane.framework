@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name.Text" xml:space="preserve">
+    <value>Név:</value>
+  </data>
+  <data name="Parent.Text" xml:space="preserve">
+    <value>Szülő:</value>
+  </data>
+  <data name="Title.Text" xml:space="preserve">
+    <value>Cím:</value>
+  </data>
+  <data name="Settings.Heading" xml:space="preserve">
+    <value>Beállítások elemre</value>
+  </data>
+  <data name="SiteRoot" xml:space="preserve">
+    <value>Site Root</value>
+  </data>
+  <data name="Before" xml:space="preserve">
+    <value>Előtt</value>
+  </data>
+  <data name="After" xml:space="preserve">
+    <value>Után</value>
+  </data>
+  <data name="Page.Select" xml:space="preserve">
+    <value>Válassza az Oldal lehetőséget</value>
+  </data>
+  <data name="Container.Select" xml:space="preserve">
+    <value>Válassza a Tároló lehetőséget</value>
+  </data>
+  <data name="Error.ChildPage.Load" xml:space="preserve">
+    <value>Hiba a szülőnek szánt gyermekoldalak betöltésekor</value>
+  </data>
+  <data name="Error.Pane.Load" xml:space="preserve">
+    <value>Hiba a téma panel-elrendezéseinek betöltésekor</value>
+  </data>
+  <data name="Mesage.Page.PathExists" xml:space="preserve">
+    <value>A webhelyhez már létezik egy oldal a(z) „{0}” elérési úttal. Az oldal útvonalának egyedinek kell lennie. Előfordulhat, hogy ellenőriznie kell, hogy létezik-e ezzel az elérési úttal rendelkező oldal a Lomtárban.</value>
+  </data>
+  <data name="Message.Required.PageInfo" xml:space="preserve">
+    <value>Meg kell adnia az oldal nevét, témáját és tárolóját</value>
+  </data>
+  <data name="Error.Page.Save" xml:space="preserve">
+    <value>Hiba az oldal mentésekor</value>
+  </data>
+  <data name="Name.HelpText" xml:space="preserve">
+    <value>Írja be az oldal nevét</value>
+  </data>
+  <data name="Parent.HelpText" xml:space="preserve">
+    <value>Válassza ki az oldal szülőjét a webhelyhierarchiában</value>
+  </data>
+  <data name="Navigation.HelpText" xml:space="preserve">
+    <value>Válassza ki, hogy az oldal a webhelynavigáció része-e vagy rejtett</value>
+  </data>
+  <data name="UrlPath.HelpText" xml:space="preserve">
+    <value>Opcionálisan adjon meg egy URL-útvonalat ehhez az oldalhoz (pl. kezdőlap ). Ha nem ad meg url elérési utat, a rendszer az oldal nevét fogja használni. Felhívjuk figyelmét, hogy a szóközöket és az írásjeleket kötőjel váltja fel. Ha az oldalt gyökérútvonalnak szánják, adja meg a „/” jelet.</value>
+  </data>
+  <data name="Redirect.HelpText" xml:space="preserve">
+    <value>Opcionálisan adjon meg egy URL-címet, amelyre az oldalnak át kell irányítania, amikor a felhasználó arra navigál</value>
+  </data>
+  <data name="Title.HelpText" xml:space="preserve">
+    <value>Opcionálisan adja meg az oldal címét. Ha nem ad meg oldalcímet, a rendszer az oldal nevét fogja használni.</value>
+  </data>
+  <data name="Theme.HelpText" xml:space="preserve">
+    <value>Válassza ki az oldal témáját</value>
+  </data>
+  <data name="DefaultContainer.HelpText" xml:space="preserve">
+    <value>Válassza ki az oldal alapértelmezett tárolóját</value>
+  </data>
+  <data name="Icon.HelpText" xml:space="preserve">
+    <value>Opcionálisan adjon meg egy ikonosztálynevet ehhez az oldalhoz, amely megjelenik a webhely navigációjában</value>
+  </data>
+  <data name="Personalizable.HelpText" xml:space="preserve">
+    <value>Válassza ki, hogy szeretné-e a felhasználók személyre szabni ezt az oldalt saját tartalommal</value>
+  </data>
+  <data name="Navigation.Text" xml:space="preserve">
+    <value>Navigáció? </value>
+  </data>
+  <data name="UrlPath.Text" xml:space="preserve">
+    <value>URL elérési útja: </value>
+  </data>
+  <data name="Redirect.Text" xml:space="preserve">
+    <value>Átirányítás: </value>
+  </data>
+  <data name="Theme.Text" xml:space="preserve">
+    <value>Téma: </value>
+  </data>
+  <data name="DefaultContainer.Text" xml:space="preserve">
+    <value>Alapértelmezett tároló: </value>
+  </data>
+  <data name="Icon.Text" xml:space="preserve">
+    <value>Ikon: </value>
+  </data>
+  <data name="Personalizable.Text" xml:space="preserve">
+    <value>Személyre szabható? </value>
+  </data>
+  <data name="Appearance.Heading" xml:space="preserve">
+    <value>Megjelenés</value>
+  </data>
+  <data name="ThisLocation.Keep" xml:space="preserve">
+    <value>Fenntartja a jelenlegi helyet</value>
+  </data>
+  <data name="ToBeginning" xml:space="preserve">
+    <value>Kezdethez</value>
+  </data>
+  <data name="ToEnd" xml:space="preserve">
+    <value>Vége</value>
+  </data>
+  <data name="Error.Page.Load" xml:space="preserve">
+    <value>Hiba az oldal betöltésekor</value>
+  </data>
+  <data name="Move.HelpText" xml:space="preserve">
+    <value>Válassza ki azt a helyet, ahová az oldalt más oldalakhoz képest át szeretné helyezni</value>
+  </data>
+  <data name="Move.Text" xml:space="preserve">
+    <value>Mozog: </value>
+  </data>
+  <data name="ModuleDefinition" xml:space="preserve">
+    <value>Modul</value>
+  </data>
+  <data name="ModuleTitle" xml:space="preserve">
+    <value>Cím</value>
+  </data>
+  <data name="PageModules.Heading" xml:space="preserve">
+    <value>Modulok</value>
+  </data>
+  <data name="ModuleSettings.Text" xml:space="preserve">
+    <value>Szerkesztés</value>
+  </data>
+  <data name="DeleteModule.Header" xml:space="preserve">
+    <value>Modul törlése</value>
+  </data>
+  <data name="DeleteModule.Message" xml:space="preserve">
+    <value>Biztos benne, hogy törölni szeretné ezt a modult?</value>
+  </data>
+  <data name="DeleteModule.Text" xml:space="preserve">
+    <value>Töröl</value>
+  </data>
+  <data name="Permissions.Heading" xml:space="preserve">
+    <value>Engedélyek</value>
+  </data>
+  <data name="ThemeSettings.Heading" xml:space="preserve">
+    <value>Téma beállításai</value>
+  </data>
+  <data name="Clickable.HelpText" xml:space="preserve">
+    <value>Válassza ki, hogy a hivatkozás engedélyezve van-e vagy letiltva a webhelynavigációban</value>
+  </data>
+  <data name="Clickable.Text" xml:space="preserve">
+    <value>Kattintható?</value>
+  </data>
+  <data name="HeadContent.HelpText" xml:space="preserve">
+    <value>Opcionálisan adjon meg tartalmat az oldal fejlécében (pl. meta-, link- vagy szkriptcímkék)</value>
+  </data>
+  <data name="HeadContent.Text" xml:space="preserve">
+    <value>A fej tartalma:</value>
+  </data>
+  <data name="Message.Page.Reserved" xml:space="preserve">
+    <value>A(z) {0} oldal le van foglalva. Kérjük, adjon meg egy másik nevet az oldalának.</value>
+  </data>
+  <data name="BodyContent.HelpText" xml:space="preserve">
+    <value>Opcionálisan adjon meg tartalmat, amelyet az oldal törzsébe kíván beilleszteni (pl. szkriptcímkék)</value>
+  </data>
+  <data name="BodyContent.Text" xml:space="preserve">
+    <value>Testtartalom:</value>
+  </data>
+  <data name="PageContent.Heading" xml:space="preserve">
+    <value>Oldal tartalma</value>
+  </data>
+  <data name="ThemeChanged.Message" xml:space="preserve">
+    <value>Kérjük, vegye figyelembe, hogy az alapértelmezett webhelytéma felülbírálása egy nem kapcsolódó oldaltémával kompatibilitási problémákat okozhat a webhelyével</value>
+  </data>
+  <data name="EffectiveDate.HelpText" xml:space="preserve">
+    <value>A dátum, amikor ez az oldal aktív</value>
+  </data>
+  <data name="EffectiveDate.Text" xml:space="preserve">
+    <value>Hatálybalépés dátuma: </value>
+  </data>
+  <data name="ExpiryDate.HelpText" xml:space="preserve">
+    <value>Az oldal lejárati dátuma</value>
+  </data>
+  <data name="ExpiryDate.Text" xml:space="preserve">
+    <value>Lejárati dátum: </value>
+  </data>
+  <data name="PersonalizedUrlPath.Text" xml:space="preserve">
+    <value>URL elérési útja:</value>
+  </data>
+  <data name="PersonalizedUrlPath.HelpText" xml:space="preserve">
+    <value>Adjon meg egy url elérési utat személyre szabott oldalához. Felhívjuk figyelmét, hogy a szóközöket és az írásjeleket kötőjel váltja fel.</value>
+  </data>
+  <data name="UpdateModulePermissions.Text" xml:space="preserve">
+    <value>Frissíti a modulengedélyeket?</value>
+  </data>
+  <data name="UpdateModulePermissions.HelpText" xml:space="preserve">
+    <value>Adja meg, hogy az oldalengedélyeken végzett módosításokat át kell-e terjeszteni az ezen az oldalon található modulokra</value>
+  </data>
+  <data name="Theme.Heading" xml:space="preserve">
+    <value>Téma</value>
+  </data>
+</root>

@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Icon.AccountLogin" xml:space="preserve">
+    <value>Fiók bejelentkezés</value>
+  </data>
+  <data name="Icon.AccountLogout" xml:space="preserve">
+    <value>Fiók kijelentkezés</value>
+  </data>
+  <data name="Icon.ActionRedo" xml:space="preserve">
+    <value>Művelet újra</value>
+  </data>
+  <data name="Icon.ActionUndo" xml:space="preserve">
+    <value>Művelet visszavonás</value>
+  </data>
+  <data name="Icon.AlignCenter" xml:space="preserve">
+    <value>Középre igazítás</value>
+  </data>
+  <data name="Icon.AlignLeft" xml:space="preserve">
+    <value>Balra igazítás</value>
+  </data>
+  <data name="Icon.AlignRight" xml:space="preserve">
+    <value>Igazítás jobbra</value>
+  </data>
+  <data name="Icon.Aperture" xml:space="preserve">
+    <value>Nyílás</value>
+  </data>
+  <data name="Icon.ArrowBottom" xml:space="preserve">
+    <value>Nyíl alsó</value>
+  </data>
+  <data name="Icon.ArrowCircleBottom" xml:space="preserve">
+    <value>Nyíl kör alsó</value>
+  </data>
+  <data name="Icon.ArrowCircleLeft" xml:space="preserve">
+    <value>Nyíl kör balra</value>
+  </data>
+  <data name="Icon.ArrowCircleRight" xml:space="preserve">
+    <value>Nyíl kör jobbra</value>
+  </data>
+  <data name="Icon.ArrowCircleTop" xml:space="preserve">
+    <value>Arrow Circle Top</value>
+  </data>
+  <data name="Icon.ArrowLeft" xml:space="preserve">
+    <value>Balra nyíl</value>
+  </data>
+  <data name="Icon.ArrowRight" xml:space="preserve">
+    <value>Nyíl jobbra</value>
+  </data>
+  <data name="Icon.ArrowThickBottom" xml:space="preserve">
+    <value>Nyíl vastag alsó</value>
+  </data>
+  <data name="Icon.ArrowThickLeft" xml:space="preserve">
+    <value>Nyíl vastag balra</value>
+  </data>
+  <data name="Icon.ArrowThickRight" xml:space="preserve">
+    <value>Nyil Vastag Jobbra</value>
+  </data>
+  <data name="Icon.ArrowThickTop" xml:space="preserve">
+    <value>Nyil Vastag fellül</value>
+  </data>
+  <data name="Icon.ArrowTop" xml:space="preserve">
+    <value>Nyil felül</value>
+  </data>
+  <data name="Icon.AudioSpectrum" xml:space="preserve">
+    <value>Audio spektrum</value>
+  </data>
+  <data name="Icon.Audio" xml:space="preserve">
+    <value>Hang</value>
+  </data>
+  <data name="Icon.Badge" xml:space="preserve">
+    <value>Jelvény</value>
+  </data>
+  <data name="Icon.Ban" xml:space="preserve">
+    <value>Tilalom</value>
+  </data>
+  <data name="Icon.BarChart" xml:space="preserve">
+    <value>Oszlopdiagram</value>
+  </data>
+  <data name="Icon.Basket" xml:space="preserve">
+    <value>Kosár</value>
+  </data>
+  <data name="Icon.BatteryEmpty" xml:space="preserve">
+    <value>Akkumulátor üres</value>
+  </data>
+  <data name="Icon.BatteryFull" xml:space="preserve">
+    <value>Az akkumulátor megtelt</value>
+  </data>
+  <data name="Icon.Beaker" xml:space="preserve">
+    <value>Pohár</value>
+  </data>
+  <data name="Icon.Bell" xml:space="preserve">
+    <value>Harang</value>
+  </data>
+  <data name="Icon.Bluetooth" xml:space="preserve">
+    <value>Bluetooth</value>
+  </data>
+  <data name="Icon.Bold" xml:space="preserve">
+    <value>Bátor</value>
+  </data>
+  <data name="Icon.Bolt" xml:space="preserve">
+    <value>Csavar</value>
+  </data>
+  <data name="Icon.Book" xml:space="preserve">
+    <value>Könyv</value>
+  </data>
+  <data name="Icon.Bookmark" xml:space="preserve">
+    <value>Könyvjelző</value>
+  </data>
+  <data name="Icon.Box" xml:space="preserve">
+    <value>Doboz</value>
+  </data>
+  <data name="Icon.Briefcase" xml:space="preserve">
+    <value>Aktatáska</value>
+  </data>
+  <data name="Icon.BritishPound" xml:space="preserve">
+    <value>brit font</value>
+  </data>
+  <data name="Icon.Browser" xml:space="preserve">
+    <value>Böngésző</value>
+  </data>
+  <data name="Icon.Brush" xml:space="preserve">
+    <value>Kefe</value>
+  </data>
+  <data name="Icon.Bug" xml:space="preserve">
+    <value>Bogár</value>
+  </data>
+  <data name="Icon.Bullhorn" xml:space="preserve">
+    <value>Bullhorn</value>
+  </data>
+  <data name="Icon.Calculator" xml:space="preserve">
+    <value>Számológép</value>
+  </data>
+  <data name="Icon.Calendar" xml:space="preserve">
+    <value>Naptár</value>
+  </data>
+  <data name="Icon.CameraSlr" xml:space="preserve">
+    <value>Camera Slr</value>
+  </data>
+  <data name="Icon.CaretBottom" xml:space="preserve">
+    <value>Caret Bottom</value>
+  </data>
+  <data name="Icon.CaretLeft" xml:space="preserve">
+    <value>Caret Bal</value>
+  </data>
+  <data name="Icon.CaretRight" xml:space="preserve">
+    <value>Caret Right</value>
+  </data>
+  <data name="Icon.CaretTop" xml:space="preserve">
+    <value>Caret Top</value>
+  </data>
+  <data name="Icon.Cart" xml:space="preserve">
+    <value>Kosár</value>
+  </data>
+  <data name="Icon.Chat" xml:space="preserve">
+    <value>Csevegés</value>
+  </data>
+  <data name="Icon.Check" xml:space="preserve">
+    <value>Ellenőrzés</value>
+  </data>
+  <data name="Icon.ChevronBottom" xml:space="preserve">
+    <value>Chevron Bottom</value>
+  </data>
+  <data name="Icon.ChevronLeft" xml:space="preserve">
+    <value>Chevron bal</value>
+  </data>
+  <data name="Icon.ChevronRight" xml:space="preserve">
+    <value>Chevron jobbra</value>
+  </data>
+  <data name="Icon.ChevronTop" xml:space="preserve">
+    <value>Chevron felső</value>
+  </data>
+  <data name="Icon.CircleCheck" xml:space="preserve">
+    <value>Kör ellenőrzése</value>
+  </data>
+  <data name="Icon.CircleX" xml:space="preserve">
+    <value>X kör</value>
+  </data>
+  <data name="Icon.Clipboard" xml:space="preserve">
+    <value>Vágólap</value>
+  </data>
+  <data name="Icon.Clock" xml:space="preserve">
+    <value>Óra</value>
+  </data>
+  <data name="Icon.CloudDownload" xml:space="preserve">
+    <value>Felhő letöltése</value>
+  </data>
+  <data name="Icon.CloudUpload" xml:space="preserve">
+    <value>Feltöltés a felhőbe</value>
+  </data>
+  <data name="Icon.Cloud" xml:space="preserve">
+    <value>Felhő</value>
+  </data>
+  <data name="Icon.Cloudy" xml:space="preserve">
+    <value>Felhős</value>
+  </data>
+  <data name="Icon.Code" xml:space="preserve">
+    <value>Kód</value>
+  </data>
+  <data name="Icon.Cog" xml:space="preserve">
+    <value>Patkószeg</value>
+  </data>
+  <data name="Icon.CollapseDown" xml:space="preserve">
+    <value>Collapse Down</value>
+  </data>
+  <data name="Icon.CollapseLeft" xml:space="preserve">
+    <value>Összecsukás balra</value>
+  </data>
+  <data name="Icon.CollapseRight" xml:space="preserve">
+    <value>Összecsukás jobbra</value>
+  </data>
+  <data name="Icon.CollapseUp" xml:space="preserve">
+    <value>Collapse Up</value>
+  </data>
+  <data name="Icon.Command" xml:space="preserve">
+    <value>Parancs</value>
+  </data>
+  <data name="Icon.CommentSquare" xml:space="preserve">
+    <value>Megjegyzés tér</value>
+  </data>
+  <data name="Icon.Compass" xml:space="preserve">
+    <value>Iránytű</value>
+  </data>
+  <data name="Icon.Contrast" xml:space="preserve">
+    <value>Kontraszt</value>
+  </data>
+  <data name="Icon.Copywriting" xml:space="preserve">
+    <value>Szövegírás</value>
+  </data>
+  <data name="Icon.CreditCard" xml:space="preserve">
+    <value>Hitelkártya</value>
+  </data>
+  <data name="Icon.Crop" xml:space="preserve">
+    <value>Termés</value>
+  </data>
+  <data name="Icon.Dashboard" xml:space="preserve">
+    <value>Műszerfal</value>
+  </data>
+  <data name="Icon.DataTransferDownload" xml:space="preserve">
+    <value>Adatátvitel letöltése</value>
+  </data>
+  <data name="Icon.DataTransferUpload" xml:space="preserve">
+    <value>Adatátviteli feltöltés</value>
+  </data>
+  <data name="Icon.Delete" xml:space="preserve">
+    <value>Töröl</value>
+  </data>
+  <data name="Icon.Dial" xml:space="preserve">
+    <value>Tárcsa</value>
+  </data>
+  <data name="Icon.Document" xml:space="preserve">
+    <value>Dokumentum</value>
+  </data>
+  <data name="Icon.Dollar" xml:space="preserve">
+    <value>Dollár</value>
+  </data>
+  <data name="Icon.DoubleQuoteSansLeft" xml:space="preserve">
+    <value>Dupla idézet bal nélkül</value>
+  </data>
+  <data name="Icon.DoubleQuoteSansRight" xml:space="preserve">
+    <value>Dupla idézet jog nélkül</value>
+  </data>
+  <data name="Icon.DoubleQuoteSerifLeft" xml:space="preserve">
+    <value>Dupla idézet Serif balra</value>
+  </data>
+  <data name="Icon.DoubleQuoteSerifRight" xml:space="preserve">
+    <value>Double Quote Serif Right</value>
+  </data>
+  <data name="Icon.Droplet" xml:space="preserve">
+    <value>Cseppecske</value>
+  </data>
+  <data name="Icon.Eject" xml:space="preserve">
+    <value>Kidobás</value>
+  </data>
+  <data name="Icon.Elevator" xml:space="preserve">
+    <value>Lift</value>
+  </data>
+  <data name="Icon.Ellipses" xml:space="preserve">
+    <value>Ellipszisek</value>
+  </data>
+  <data name="Icon.EnvelopeClosed" xml:space="preserve">
+    <value>Boríték lezárva</value>
+  </data>
+  <data name="Icon.EnvelopeOpen" xml:space="preserve">
+    <value>Boríték nyitva</value>
+  </data>
+  <data name="Icon.Euro" xml:space="preserve">
+    <value>Euro</value>
+  </data>
+  <data name="Icon.Excerpt" xml:space="preserve">
+    <value>Kivonat</value>
+  </data>
+  <data name="Icon.ExpandDown" xml:space="preserve">
+    <value>Bontsa ki lefelé</value>
+  </data>
+  <data name="Icon.ExpandLeft" xml:space="preserve">
+    <value>Bontsa ki balra</value>
+  </data>
+  <data name="Icon.ExpandRight" xml:space="preserve">
+    <value>Bontsa ki jobbra</value>
+  </data>
+  <data name="Icon.ExpandUp" xml:space="preserve">
+    <value>Bontsa ki</value>
+  </data>
+  <data name="Icon.ExternalLink" xml:space="preserve">
+    <value>Külső hivatkozás</value>
+  </data>
+  <data name="Icon.Eye" xml:space="preserve">
+    <value>Szem</value>
+  </data>
+  <data name="Icon.Eyedropper" xml:space="preserve">
+    <value>Pipetta</value>
+  </data>
+  <data name="Icon.File" xml:space="preserve">
+    <value>Fájl</value>
+  </data>
+  <data name="Icon.Fire" xml:space="preserve">
+    <value>Tűz</value>
+  </data>
+  <data name="Icon.Flag" xml:space="preserve">
+    <value>Zászló</value>
+  </data>
+  <data name="Icon.Flash" xml:space="preserve">
+    <value>Vaku</value>
+  </data>
+  <data name="Icon.Folder" xml:space="preserve">
+    <value>Mappa</value>
+  </data>
+  <data name="Icon.Fork" xml:space="preserve">
+    <value>Villa</value>
+  </data>
+  <data name="Icon.FullscreenEnter" xml:space="preserve">
+    <value>Teljes képernyős Enter</value>
+  </data>
+  <data name="Icon.FullscreenExit" xml:space="preserve">
+    <value>Teljes képernyő Kilépés</value>
+  </data>
+  <data name="Icon.Globe" xml:space="preserve">
+    <value>Földgolyó</value>
+  </data>
+  <data name="Icon.Graph" xml:space="preserve">
+    <value>Grafikon</value>
+  </data>
+  <data name="Icon.GridFourUp" xml:space="preserve">
+    <value>Rács négy felfelé</value>
+  </data>
+  <data name="Icon.GridThreeUp" xml:space="preserve">
+    <value>Rács három felfelé</value>
+  </data>
+  <data name="Icon.GridTwoUp" xml:space="preserve">
+    <value>Grid Two Up</value>
+  </data>
+  <data name="Icon.HardDrive" xml:space="preserve">
+    <value>Merevlemez</value>
+  </data>
+  <data name="Icon.Header" xml:space="preserve">
+    <value>Fejléc</value>
+  </data>
+  <data name="Icon.Headphones" xml:space="preserve">
+    <value>Fejhallgató</value>
+  </data>
+  <data name="Icon.Heart" xml:space="preserve">
+    <value>Szív</value>
+  </data>
+  <data name="Icon.Home" xml:space="preserve">
+    <value>Otthon</value>
+  </data>
+  <data name="Icon.Image" xml:space="preserve">
+    <value>Kép</value>
+  </data>
+  <data name="Icon.Inbox" xml:space="preserve">
+    <value>Beérkezett üzenetek</value>
+  </data>
+  <data name="Icon.Infinity" xml:space="preserve">
+    <value>Végtelenség</value>
+  </data>
+  <data name="Icon.Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Icon.Italic" xml:space="preserve">
+    <value>Dőlt</value>
+  </data>
+  <data name="Icon.JustifyCenter" xml:space="preserve">
+    <value>Justify Center</value>
+  </data>
+  <data name="Icon.JustifyLeft" xml:space="preserve">
+    <value>Igazolás balra</value>
+  </data>
+  <data name="Icon.JustifyRight" xml:space="preserve">
+    <value>Indokolja helyesen</value>
+  </data>
+  <data name="Icon.Key" xml:space="preserve">
+    <value>Kulcsfontosságú</value>
+  </data>
+  <data name="Icon.Laptop" xml:space="preserve">
+    <value>Laptop</value>
+  </data>
+  <data name="Icon.Layers" xml:space="preserve">
+    <value>Rétegek</value>
+  </data>
+  <data name="Icon.Lightbulb" xml:space="preserve">
+    <value>Villanykörte</value>
+  </data>
+  <data name="Icon.LinkBroken" xml:space="preserve">
+    <value>Link megszakadt</value>
+  </data>
+  <data name="Icon.LinkIntact" xml:space="preserve">
+    <value>Link sértetlen</value>
+  </data>
+  <data name="Icon.ListRich" xml:space="preserve">
+    <value>List Rich</value>
+  </data>
+  <data name="Icon.List" xml:space="preserve">
+    <value>Lista</value>
+  </data>
+  <data name="Icon.Location" xml:space="preserve">
+    <value>Elhelyezkedés</value>
+  </data>
+  <data name="Icon.LockLocked" xml:space="preserve">
+    <value>Zár Lezárva</value>
+  </data>
+  <data name="Icon.LockUnlocked" xml:space="preserve">
+    <value>Zár feloldva</value>
+  </data>
+  <data name="Icon.LoopCircular" xml:space="preserve">
+    <value>Hurok kör alakú</value>
+  </data>
+  <data name="Icon.LoopSquare" xml:space="preserve">
+    <value>Hurok tér</value>
+  </data>
+  <data name="Icon.Loop" xml:space="preserve">
+    <value>Hurok</value>
+  </data>
+  <data name="Icon.MagnifyingGlass" xml:space="preserve">
+    <value>Nagyító</value>
+  </data>
+  <data name="Icon.MapMarker" xml:space="preserve">
+    <value>Térképjelző</value>
+  </data>
+  <data name="Icon.Map" xml:space="preserve">
+    <value>Térkép</value>
+  </data>
+  <data name="Icon.MediaPause" xml:space="preserve">
+    <value>Média szünet</value>
+  </data>
+  <data name="Icon.MediaPlay" xml:space="preserve">
+    <value>Media Play</value>
+  </data>
+  <data name="Icon.MediaRecord" xml:space="preserve">
+    <value>Médiafelvétel</value>
+  </data>
+  <data name="Icon.MediaSkipBackward" xml:space="preserve">
+    <value>Média Ugrás hátra</value>
+  </data>
+  <data name="Icon.MediaSkipForward" xml:space="preserve">
+    <value>Média Ugrás előre</value>
+  </data>
+  <data name="Icon.MediaStepBackward" xml:space="preserve">
+    <value>Média Lépés hátra</value>
+  </data>
+  <data name="Icon.MediaStepForward" xml:space="preserve">
+    <value>Média lépés előre</value>
+  </data>
+  <data name="Icon.MediaStop" xml:space="preserve">
+    <value>Media Stop</value>
+  </data>
+  <data name="Icon.MedicalCross" xml:space="preserve">
+    <value>Orvosi kereszt</value>
+  </data>
+  <data name="Icon.Menu" xml:space="preserve">
+    <value>Menü</value>
+  </data>
+  <data name="Icon.Microphone" xml:space="preserve">
+    <value>Mikrofon</value>
+  </data>
+  <data name="Icon.Minus" xml:space="preserve">
+    <value>Mínusz</value>
+  </data>
+  <data name="Icon.Monitor" xml:space="preserve">
+    <value>Monitor</value>
+  </data>
+  <data name="Icon.Moon" xml:space="preserve">
+    <value>Hold</value>
+  </data>
+  <data name="Icon.Move" xml:space="preserve">
+    <value>Mozog</value>
+  </data>
+  <data name="Icon.MusicalNote" xml:space="preserve">
+    <value>Hangjegy</value>
+  </data>
+  <data name="Icon.Paperclip" xml:space="preserve">
+    <value>Gemkapocs</value>
+  </data>
+  <data name="Icon.Pencil" xml:space="preserve">
+    <value>Ceruza</value>
+  </data>
+  <data name="Icon.People" xml:space="preserve">
+    <value>Emberek</value>
+  </data>
+  <data name="Icon.Person" xml:space="preserve">
+    <value>Személy</value>
+  </data>
+  <data name="Icon.Phone" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="Icon.PieChart" xml:space="preserve">
+    <value>Kördiagram</value>
+  </data>
+  <data name="Icon.Pin" xml:space="preserve">
+    <value>Pin</value>
+  </data>
+  <data name="Icon.PlayCircle" xml:space="preserve">
+    <value>Play Circle</value>
+  </data>
+  <data name="Icon.Plus" xml:space="preserve">
+    <value>Plusz</value>
+  </data>
+  <data name="Icon.PowerStandby" xml:space="preserve">
+    <value>Power Standby</value>
+  </data>
+  <data name="Icon.Print" xml:space="preserve">
+    <value>Nyomtatás</value>
+  </data>
+  <data name="Icon.Project" xml:space="preserve">
+    <value>Projekt</value>
+  </data>
+  <data name="Icon.Pulse" xml:space="preserve">
+    <value>Impulzus</value>
+  </data>
+  <data name="Icon.PuzzlePiece" xml:space="preserve">
+    <value>Puzzle Piece</value>
+  </data>
+  <data name="Icon.QuestionMark" xml:space="preserve">
+    <value>Kérdőjel</value>
+  </data>
+  <data name="Icon.Rain" xml:space="preserve">
+    <value>Eső</value>
+  </data>
+  <data name="Icon.Random" xml:space="preserve">
+    <value>Véletlen</value>
+  </data>
+  <data name="Icon.Reload" xml:space="preserve">
+    <value>Újratöltés</value>
+  </data>
+  <data name="Icon.ResizeBoth" xml:space="preserve">
+    <value>Mindkettő átméretezése</value>
+  </data>
+  <data name="Icon.ResizeHeight" xml:space="preserve">
+    <value>Magasság átméretezése</value>
+  </data>
+  <data name="Icon.ResizeWidth" xml:space="preserve">
+    <value>Szélesség átméretezése</value>
+  </data>
+  <data name="Icon.RssAlt" xml:space="preserve">
+    <value>Rss Alt</value>
+  </data>
+  <data name="Icon.Rss" xml:space="preserve">
+    <value>Rss</value>
+  </data>
+  <data name="Icon.Script" xml:space="preserve">
+    <value>Forgatókönyv</value>
+  </data>
+  <data name="Icon.ShareBoxed" xml:space="preserve">
+    <value>Share Boxed</value>
+  </data>
+  <data name="Icon.Share" xml:space="preserve">
+    <value>Megosztás</value>
+  </data>
+  <data name="Icon.Shield" xml:space="preserve">
+    <value>Pajzs</value>
+  </data>
+  <data name="Icon.Signal" xml:space="preserve">
+    <value>Jel</value>
+  </data>
+  <data name="Icon.Signpost" xml:space="preserve">
+    <value>Útjelző tábla</value>
+  </data>
+  <data name="Icon.SortAscending" xml:space="preserve">
+    <value>Növekvő rendezés</value>
+  </data>
+  <data name="Icon.SortDescending" xml:space="preserve">
+    <value>Csökkenő rendezés</value>
+  </data>
+  <data name="Icon.Spreadsheet" xml:space="preserve">
+    <value>Táblázat</value>
+  </data>
+  <data name="Icon.Star" xml:space="preserve">
+    <value>Csillag</value>
+  </data>
+  <data name="Icon.Sun" xml:space="preserve">
+    <value>Nap</value>
+  </data>
+  <data name="Icon.Tablet" xml:space="preserve">
+    <value>Tabletta</value>
+  </data>
+  <data name="Icon.Tag" xml:space="preserve">
+    <value>Címke</value>
+  </data>
+  <data name="Icon.Tags" xml:space="preserve">
+    <value>Címkék</value>
+  </data>
+  <data name="Icon.Target" xml:space="preserve">
+    <value>Cél</value>
+  </data>
+  <data name="Icon.Task" xml:space="preserve">
+    <value>Feladat</value>
+  </data>
+  <data name="Icon.Terminal" xml:space="preserve">
+    <value>Terminál</value>
+  </data>
+  <data name="Icon.Text" xml:space="preserve">
+    <value>Szöveg</value>
+  </data>
+  <data name="Icon.ThumbDown" xml:space="preserve">
+    <value>Lefelé hüvelykujj</value>
+  </data>
+  <data name="Icon.ThumbUp" xml:space="preserve">
+    <value>Menj fel</value>
+  </data>
+  <data name="Icon.Timer" xml:space="preserve">
+    <value>Időzítő</value>
+  </data>
+  <data name="Icon.Transfer" xml:space="preserve">
+    <value>Átruházás</value>
+  </data>
+  <data name="Icon.Trash" xml:space="preserve">
+    <value>Szemét</value>
+  </data>
+  <data name="Icon.Underline" xml:space="preserve">
+    <value>Aláhúzás</value>
+  </data>
+  <data name="Icon.VerticalAlignBottom" xml:space="preserve">
+    <value>Függőleges igazítás alul</value>
+  </data>
+  <data name="Icon.VerticalAlignCenter" xml:space="preserve">
+    <value>Függőleges igazítás középre</value>
+  </data>
+  <data name="Icon.VerticalAlignTop" xml:space="preserve">
+    <value>Függőleges igazítás felső</value>
+  </data>
+  <data name="Icon.Video" xml:space="preserve">
+    <value>Videó</value>
+  </data>
+  <data name="Icon.VolumeHigh" xml:space="preserve">
+    <value>Hangerő magas</value>
+  </data>
+  <data name="Icon.VolumeLow" xml:space="preserve">
+    <value>Hangerő alacsony</value>
+  </data>
+  <data name="Icon.VolumeOff" xml:space="preserve">
+    <value>Hangerő Ki</value>
+  </data>
+  <data name="Icon.Warning" xml:space="preserve">
+    <value>Figyelmeztetés</value>
+  </data>
+  <data name="Icon.Wifi" xml:space="preserve">
+    <value>Wifi</value>
+  </data>
+  <data name="Icon.Wrench" xml:space="preserve">
+    <value>Csavarkulcs</value>
+  </data>
+  <data name="Icon.X" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="Icon.Yen" xml:space="preserve">
+    <value>Jen</value>
+  </data>
+  <data name="Icon.ZoomIn" xml:space="preserve">
+    <value>Nagyítás</value>
+  </data>
+  <data name="Icon.ZoomOut" xml:space="preserve">
+    <value>Kicsinyítés</value>
+  </data>
+</root>

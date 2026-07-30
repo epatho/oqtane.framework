@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Elfelejtett jelszó?</value>
+  </data>
+  <data name="ForgotUsername" xml:space="preserve">
+    <value>Elfelejtette a felhasználónevet?</value>
+  </data>
+  <data name="UseLoginLink" xml:space="preserve">
+    <value>Használja a Bejelentkezési linket</value>
+  </data>
+  <data name="Success.Account.Verified" xml:space="preserve">
+    <value>Felhasználói fiók e-mail címe sikeresen ellenőrizve. Most már bejelentkezhet felhasználónevével és jelszavával.</value>
+  </data>
+  <data name="Message.Account.NotVerified" xml:space="preserve">
+    <value>A felhasználói fiók e-mail címét nem sikerült ellenőrizni. További útmutatásért forduljon rendszergazdájához.</value>
+  </data>
+  <data name="Success.Account.Linked" xml:space="preserve">
+    <value>A külső bejelentkezés összekapcsolása sikeresen megtörtént. Most már bejelentkezhet.</value>
+  </data>
+  <data name="Message.Account.NotLinked" xml:space="preserve">
+    <value>A külső bejelentkezést nem sikerült összekapcsolni. További útmutatásért forduljon rendszergazdájához.</value>
+  </data>
+  <data name="Error.Login.Fail" xml:space="preserve">
+    <value>Bejelentkezés sikertelen. Ne feledje, hogy a jelszavak megkülönböztetik a kis- és nagybetűket. Ha többször is sikertelenül próbált bejelentkezni, fiókját egy időre zároljuk. Vegye figyelembe, hogy az új felhasználói fiókok gyakran megkövetelik az e-mail-cím ellenőrzését, így érdemes ellenőrizni az e-mail-címét, hogy kap-e egy értesítést, amely további utasításokat tartalmaz.</value>
+  </data>
+  <data name="Message.Required.UserInfo" xml:space="preserve">
+    <value>Kérjük, adja meg az összes kötelező mezőt</value>
+  </data>
+  <data name="Info.SignedIn" xml:space="preserve">
+    <value>Már bejelentkezett</value>
+  </data>
+  <data name="Message.ForgotPassword" xml:space="preserve">
+    <value>Kérjük, ellenőrizze a felhasználói fiókjához társított e-mail címet a jelszó-visszaállítási értesítésért</value>
+  </data>
+  <data name="Message.ForgotUsername" xml:space="preserve">
+    <value>Kérjük, ellenőrizze e-mail-címét felhasználónév-emlékeztető értesítésért</value>
+  </data>
+  <data name="Message.SendLoginLink" xml:space="preserve">
+    <value>A bejelentkezési linket elküldtük az Ön e-mail címére. A link csak korlátozott ideig érvényes.</value>
+  </data>
+  <data name="Message.UserDoesNotExist" xml:space="preserve">
+    <value>Felhasználó nem létezik a megadott feltételekhez</value>
+  </data>
+  <data name="Code.HelpText" xml:space="preserve">
+    <value>Kérjük, adja meg a biztonságos ellenőrző kódot, amelyet e-mailben küldtünk Önnek</value>
+  </data>
+  <data name="Code.Placeholder" xml:space="preserve">
+    <value>Ellenőrző kód</value>
+  </data>
+  <data name="Code.Text" xml:space="preserve">
+    <value>Ellenőrző kód:</value>
+  </data>
+  <data name="Error.TwoFactor.Fail" xml:space="preserve">
+    <value>Az ellenőrzés sikertelen. Kérjük, győződjön meg róla, hogy a kódot pontosan az e-mailben megadott formában adta meg. Ha új ellenőrző kódot szeretne kérni, válassza a Mégse lehetőséget, és jelentkezzen be újra.</value>
+  </data>
+  <data name="Message.TwoFactor" xml:space="preserve">
+    <value>Biztonságos ellenőrző kódot küldtünk az Ön e-mail címére. Kérjük, írja be a kapott kódot. Ha nem kapja meg a kódot, vagy elvesztette hozzáférését e-mailjéhez, forduljon rendszergazdájához.</value>
+  </data>
+  <data name="Password.HelpText" xml:space="preserve">
+    <value>Kérjük, adja meg a fiókjához tartozó jelszót. Ne feledje, hogy a jelszavak érzékenyek. Ha többször is sikertelenül próbál bejelentkezni a fiókjába, akkor egy időre ki lesz zárva.</value>
+  </data>
+  <data name="Password.Placeholder" xml:space="preserve">
+    <value>Jelszó</value>
+  </data>
+  <data name="Password.Text" xml:space="preserve">
+    <value>Jelszó:</value>
+  </data>
+  <data name="Remember.HelpText" xml:space="preserve">
+    <value>Adja meg, hogy szeretne-e automatikusan újra bejelentkezni, amikor legközelebb meglátogatja ezt az oldalt</value>
+  </data>
+  <data name="Remember.Text" xml:space="preserve">
+    <value>Bejelentkezve marad?</value>
+  </data>
+  <data name="Username.HelpText" xml:space="preserve">
+    <value>Kérjük, adja meg a fiókjához kapcsolódó felhasználónevet</value>
+  </data>
+  <data name="Username.Placeholder" xml:space="preserve">
+    <value>Felhasználónév</value>
+  </data>
+  <data name="Username.Text" xml:space="preserve">
+    <value>Felhasználónév:</value>
+  </data>
+  <data name="Use" xml:space="preserve">
+    <value>Használat</value>
+  </data>
+  <data name="Error.LoadLogin" xml:space="preserve">
+    <value>Hiba a bejelentkezés betöltésekor</value>
+  </data>
+  <data name="Error.Login" xml:space="preserve">
+    <value>Hiba a bejelentkezés során</value>
+  </data>
+  <data name="Error.ResetPassword" xml:space="preserve">
+    <value>Hiba a jelszó visszaállítása során</value>
+  </data>
+  <data name="Error.ForgotUsername" xml:space="preserve">
+    <value>Hiba a felhasználónév-emlékeztető küldésekor</value>
+  </data>
+  <data name="Error.SendLoginLink" xml:space="preserve">
+    <value>Hiba a bejelentkezési link elküldésekor</value>
+  </data>
+  <data name="ExternalLoginStatus.DuplicateEmail" xml:space="preserve">
+    <value>Már több felhasználói fiók létezik a külső bejelentkezési e-mail címével. További útmutatásért forduljon rendszergazdájához.</value>
+  </data>
+  <data name="ExternalLoginStatus.MissingClaims" xml:space="preserve">
+    <value>A külső bejelentkezési szolgáltató nem adott meg minden szükséges információt. További útmutatásért forduljon rendszergazdájához.</value>
+  </data>
+  <data name="ExternalLoginStatus.ProviderKeyMismatch" xml:space="preserve">
+    <value>Hiba történt a külső bejelentkezés ellenőrzésekor. További útmutatásért forduljon rendszergazdájához.</value>
+  </data>
+  <data name="ExternalLoginStatus.UserDoesNotExist" xml:space="preserve">
+    <value>A külső bejelentkezési e-mail címének megfelelő felhasználói fiók nem létezik. További útmutatásért forduljon rendszergazdájához.</value>
+  </data>
+  <data name="ExternalLoginStatus.UserNotCreated" xml:space="preserve">
+    <value>Nem sikerült felhasználói fiókot létrehozni a külső bejelentkezéshez. További útmutatásért forduljon rendszergazdájához.</value>
+  </data>
+  <data name="ExternalLoginStatus.VerificationRequired" xml:space="preserve">
+    <value>Ahhoz, hogy külső bejelentkezési adatait felhasználói fiókjával összekapcsolhassa, igazolnia kell személyazonosságát. Kérjük, nézze meg e-mailjét további útmutatásért.</value>
+  </data>
+  <data name="ExternalLoginStatus.AccessDenied" xml:space="preserve">
+    <value>Külső bejelentkezését megtagadták. További útmutatásért forduljon rendszergazdájához.</value>
+  </data>
+  <data name="ExternalLoginStatus.RemoteFailure" xml:space="preserve">
+    <value>A külső bejelentkezés sikertelen. További útmutatásért forduljon rendszergazdájához.</value>
+  </data>
+  <data name="ExternalLoginStatus.ReviewClaims" xml:space="preserve">
+    <value>A követelések áttekintése opció engedélyezve volt a külső bejelentkezési beállításokban. Kérjük, keresse fel az eseménynaplót a Szolgáltató által visszaküldött követelések megtekintéséhez.</value>
+  </data>
+  <data name="ExternalLoginStatus.LoginLinkFailed" xml:space="preserve">
+    <value>A bejelentkezési linkek időérzékenyek. A bejelentkezési folyamat befejezéséhez kérjen másik bejelentkezési linket.</value>
+  </data>
+  <data name="ExternalLoginStatus.PasskeyFailed" xml:space="preserve">
+    <value>A jelszóval történő bejelentkezés sikertelen volt. Kérjük, győződjön meg arról, hogy a megfelelő jelszót választotta ki ehhez a webhelyhez.</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Új felhasználóként regisztrálni?</value>
+  </data>
+  <data name="Passkey" xml:space="preserve">
+    <value>Használja a jelszót</value>
+  </data>
+  <data name="Error.Passkey.Fail" xml:space="preserve">
+    <value>A jelszóval történő bejelentkezés nem volt sikeres</value>
+  </data>
+  <data name="Email.HelpText" xml:space="preserve">
+    <value>Kérjük, adja meg a fiókjához kapcsolódó e-mail címet</value>
+  </data>
+  <data name="Email.Placeholder" xml:space="preserve">
+    <value>E-mail cím</value>
+  </data>
+  <data name="Email.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+</root>
