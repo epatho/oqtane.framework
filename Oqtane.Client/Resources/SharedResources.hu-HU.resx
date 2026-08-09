@@ -303,8 +303,8 @@
   <data name="License Not Specified" xml:space="preserve">
     <value>Licenc nincs megadva</value>
   </data>
-  <data name="Review License Terms" xml:space="preserve">
-    <value>Tekintse át a licencfeltételeket</value>
+  <data name="License Agreement" xml:space="preserve">
+    <value>Licencszerződés</value>
   </data>
   <data name="Trial" xml:space="preserve">
     <value>Napi próba</value>

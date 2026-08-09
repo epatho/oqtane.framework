@@ -153,9 +153,6 @@
   <data name="Contact.HelpText" xml:space="preserve">
     <value>A modul elérhetősége</value>
   </data>
-  <data name="License.HelpText" xml:space="preserve">
-    <value>A modul licencfeltételei</value>
-  </data>
   <data name="Runtimes.HelpText" xml:space="preserve">
     <value>A Blazor futási környezetek, amelyeket ez a modul támogat</value>
   </data>
@@ -239,5 +236,8 @@
   </data>
   <data name="Fingerprint.HelpText" xml:space="preserve">
     <value>A modul statikus erőforrásainak egyedi azonosítója. Ezt az értéket az alábbi Mentés lehetőségre kattintva módosíthatja (pl. gyorsítótár-busting).</value>
+  </data>
+  <data name="License.HelpText" xml:space="preserve">
+    <value>A modul licence</value>
   </data>
 </root>

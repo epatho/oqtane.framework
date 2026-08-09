@@ -145,13 +145,13 @@
     <value>Válassza ki a mappát a fájl mentéséhez</value>
   </data>
   <data name="Upload.Text" xml:space="preserve">
-    <value>Feltöltés:</value>
+    <value>Feltöltés: </value>
   </data>
   <data name="Url.Text" xml:space="preserve">
-    <value>URL:</value>
+    <value>URL: </value>
   </data>
   <data name="Folder.Text" xml:space="preserve">
-    <value>Mappa:</value>
+    <value>Mappa: </value>
   </data>
   <data name="UploadFiles.Heading" xml:space="preserve">
     <value>Fájlok feltöltése</value>
@@ -164,5 +164,8 @@
   </data>
   <data name="DownloadFiles.Heading" xml:space="preserve">
     <value>Fájlok letöltése</value>
+  </data>
+  <data name="Error.Folders.Load" xml:space="preserve">
+    <value>Hiba a mappák betöltésekor</value>
   </data>
 </root>
