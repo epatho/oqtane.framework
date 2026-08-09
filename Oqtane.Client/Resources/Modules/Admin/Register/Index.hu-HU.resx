@@ -190,6 +190,6 @@
     <value>Nyelv:</value>
   </data>
   <data name="CultureCode.HelpText" xml:space="preserve">
-    <value>Az Ön által preferált nyelv. Vegye figyelembe, hogy csak az ezen az oldalon támogatott nyelvek közül választhat.</value>
+    <value>Az Ön által előnyben részesített nyelv a felhasználói felülettel való interakcióhoz. Vegye figyelembe, hogy csak az ezen az oldalon támogatott nyelvek közül választhat.</value>
   </data>
 </root>

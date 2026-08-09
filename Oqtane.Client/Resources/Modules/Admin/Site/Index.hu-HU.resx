@@ -567,4 +567,10 @@
   <data name="ChangeDetection" xml:space="preserve">
     <value>Változásérzékelés</value>
   </data>
+  <data name="Culture.Text" xml:space="preserve">
+    <value>Kultúra:</value>
+  </data>
+  <data name="Culture.HelpText" xml:space="preserve">
+    <value>A webhely tartalmának alapértelmezett nyelve, valamint a dátumok, időpontok, számok, pénznemszimbólumok stb. formázási kultúrája...</value>
+  </data>
 </root>
