@@ -192,4 +192,16 @@
   <data name="Error.SaveSiteSettings" xml:space="preserve">
     <value>Hiba a beállítások mentésekor</value>
   </data>
+  <data name="Success.Folder.Sync" xml:space="preserve">
+    <value>A mappa szinkronizálása sikeresen megtörtént</value>
+  </data>
+  <data name="Error.Folder.Sync" xml:space="preserve">
+    <value>Hiba Szinkronizálási mappa</value>
+  </data>
+  <data name="SyncFolder" xml:space="preserve">
+    <value>Szinkronizálja a mappát</value>
+  </data>
+  <data name="SyncFolderRecursively" xml:space="preserve">
+    <value>Mappa rekurzív szinkronizálása</value>
+  </data>
 </root>

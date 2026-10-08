@@ -201,10 +201,19 @@
   <data name="CacheControl.HelpText" xml:space="preserve">
     <value>Opcionálisan adjon meg egy Cache-Control direktívát ehhez a mappához. Például a „public, max-age=60” azt jelzi, hogy a mappában lévő fájlokat 60 másodpercig gyorsítótárban kell tárolni. Kérjük, vegye figyelembe, hogy ha a gyorsítótárazás engedélyezve van, a fájlok módosításai nem jelennek meg azonnal a felhasználói felületen.</value>
   </data>
+  <data name="AddNewConfig" xml:space="preserve">
+    <value>Új konfiguráció felvétele</value>
+  </data>
+  <data name="EditConfig" xml:space="preserve">
+    <value>Beállítás módosítása</value>
+  </data>
   <data name="Path.Text" xml:space="preserve">
     <value>Útvonal:</value>
   </data>
   <data name="Path.HelpText" xml:space="preserve">
     <value>A mappa elérési útja</value>
+  </data>
+  <data name="UpdateSubfolders.Text" xml:space="preserve">
+    <value>Frissíti az almappákat?</value>
   </data>
 </root>

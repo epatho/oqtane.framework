@@ -153,4 +153,10 @@
   <data name="Message.File.TooLarge" xml:space="preserve">
     <value>A(z) {0} fájl(ok) meghaladják a maximális feltöltési méretet ({1} MB).</value>
   </data>
+  <data name="DeleteFile.Header" xml:space="preserve">
+    <value>File törlés</value>
+  </data>
+  <data name="Confirm.File.Delete" xml:space="preserve">
+    <value>Biztos, hogy véglegesen törli a {0} file-t?</value>
+  </data>
 </root>

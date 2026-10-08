@@ -117,11 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Message.Password.Invalid" xml:space="preserve">
-    <value>A beírt jelszavak nem egyeznek</value>
+  <data name="Message.Password.NoMatch" xml:space="preserve">
+    <value>A beírt jelszavak nem egyeznek.</value>
   </data>
-  <data name="Message.Password.Complexity" xml:space="preserve">
-    <value>A megadott jelszó nem felel meg az összetettségre vonatkozó irányelveknek</value>
+  <data name="Message.Password.Invalid" xml:space="preserve">
+    <value>A megadott jelszó nem felel meg a komplexitási szabályzatnak.</value>
   </data>
   <data name="From" xml:space="preserve">
     <value>Tól</value>
@@ -152,9 +152,6 @@
   </data>
   <data name="Success.Profile.Update" xml:space="preserve">
     <value>Felhasználói profil sikeresen frissítve</value>
-  </data>
-  <data name="Message.Required.ProfileInfo" xml:space="preserve">
-    <value>Meg kell adnia egy felhasználónevet és e-mail címet, valamint minden szükséges profiladatot</value>
   </data>
   <data name="Error.Profile.Save" xml:space="preserve">
     <value>Hiba a felhasználói profil mentésekor</value>
@@ -293,5 +290,8 @@
   </data>
   <data name="CultureCode.HelpText" xml:space="preserve">
     <value>Az Ön által előnyben részesített nyelv a felhasználói felülettel való interakcióhoz. Vegye figyelembe, hogy csak az ezen az oldalon támogatott nyelvek közül választhat.</value>
+  </data>
+  <data name="Message.Email.Invalid" xml:space="preserve">
+    <value>Az Email szolgáltató nem megfelelő.</value>
   </data>
 </root>

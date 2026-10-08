@@ -126,9 +126,6 @@
   <data name="Identity.Name" xml:space="preserve">
     <value>Identitás</value>
   </data>
-  <data name="Message.Required.ProfileInfo" xml:space="preserve">
-    <value>Meg kell adnia egy felhasználónevet, e-mail címet és minden szükséges profiladatot</value>
-  </data>
   <data name="Message.Username.Exists" xml:space="preserve">
     <value>Felhasználónév már létezik</value>
   </data>
@@ -165,10 +162,16 @@
   <data name="Confirmed.Text" xml:space="preserve">
     <value>Ellenőrizve?</value>
   </data>
-  <data name="Confirmed.HelpText" xml:space="preserve">
+  <data name="v" xml:space="preserve">
     <value>Azt jelzi, hogy a felhasználó e-mail-címe ellenőrizve van-e</value>
   </data>
   <data name="CultureCode.Text" xml:space="preserve">
     <value>Nyelv:</value>
+  </data>
+  <data name="Message.Username.Invalid" xml:space="preserve">
+    <value>A megadott felhasználónév nem felel meg a rendszerkövetelménynek, csak betűket vagy számjegyeket tartalmazhat, üres helyek nélkül.</value>
+  </data>
+  <data name="Message.Email.Invalid" xml:space="preserve">
+    <value>Az Email szolgáltató nem megfelelő.</value>
   </data>
 </root>

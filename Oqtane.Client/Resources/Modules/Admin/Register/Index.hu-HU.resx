@@ -141,9 +141,6 @@
   <data name="Message.Password.NoMatch" xml:space="preserve">
     <value>A beírt jelszavak nem egyeznek</value>
   </data>
-  <data name="Message.Required.UserInfo" xml:space="preserve">
-    <value>Meg kell adnia egy felhasználónevet, jelszót és e-mail címet</value>
-  </data>
   <data name="Error.User.Add" xml:space="preserve">
     <value>Hiba a felhasználó hozzáadásakor</value>
   </data>
@@ -191,5 +188,14 @@
   </data>
   <data name="CultureCode.HelpText" xml:space="preserve">
     <value>Az Ön által előnyben részesített nyelv a felhasználói felülettel való interakcióhoz. Vegye figyelembe, hogy csak az ezen az oldalon támogatott nyelvek közül választhat.</value>
+  </data>
+  <data name="Message.Email.Invalid" xml:space="preserve">
+    <value>Az Email szolgáltató nem megfelelő.</value>
+  </data>
+  <data name="Message.Password.Invalid" xml:space="preserve">
+    <value>A megadott jelszó nem felel meg a komplexitási szabályzatnak.</value>
+  </data>
+  <data name="Message.Username.Invalid" xml:space="preserve">
+    <value>A megadott felhasználónév nem felel meg a rendszerkövetelménynek, csak betűket vagy számjegyeket tartalmazhat, üres helyek nélkül.</value>
   </data>
 </root>

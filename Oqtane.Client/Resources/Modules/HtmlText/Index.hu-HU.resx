@@ -126,4 +126,37 @@
   <data name="Error.Content.Load" xml:space="preserve">
     <value>Hiba történt a tartalom betöltésekor</value>
   </data>
+  <data name="Approve.Title" xml:space="preserve">
+    <value>Tartalom jóváhagyása</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
+  <data name="Comment.Placeholder" xml:space="preserve">
+    <value>A tartalom elutasításának oka...</value>
+  </data>
+  <data name="Message.Published" xml:space="preserve">
+    <value>A tartalom megjelent</value>
+  </data>
+  <data name="Message.Rejected" xml:space="preserve">
+    <value>A tartalmat elutasították, és a szerzőt értesítették</value>
+  </data>
+  <data name="Message.Submitted" xml:space="preserve">
+    <value>A tartalom felülvizsgálatra került</value>
+  </data>
+  <data name="Reject.Title" xml:space="preserve">
+    <value>Tartalom elutasítása</value>
+  </data>
+  <data name="Review.Title" xml:space="preserve">
+    <value>Új tartalom áttekintése</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
+  <data name="Submit.Title" xml:space="preserve">
+    <value>Tartalom beküldése felülvizsgálatra</value>
+  </data>
+  <data name="View.Title" xml:space="preserve">
+    <value>Megtekintheti a közzétett tartalmat</value>
+  </data>
 </root>

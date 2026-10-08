@@ -129,4 +129,19 @@
   <data name="Versions.Text" xml:space="preserve">
     <value>Verziók:</value>
   </data>
+  <data name="Approver.HelpText" xml:space="preserve">
+    <value>Válassza ki a tartalom jóváhagyására jogosult szerepkört (vegye figyelembe, hogy az adminisztrátorok mindig rendelkeznek jóváhagyási jogokkal)</value>
+  </data>
+  <data name="Approver.Text" xml:space="preserve">
+    <value>Jóváhagyó:</value>
+  </data>
+  <data name="Message.Workflow.Validation" xml:space="preserve">
+    <value>A tartalom-jóváhagyási munkafolyamathoz jóváhagyó szükséges</value>
+  </data>
+  <data name="Workflow.HelpText" xml:space="preserve">
+    <value>A webhely tartalmára alkalmazandó munkafolyamat</value>
+  </data>
+  <data name="Workflow.Text" xml:space="preserve">
+    <value>Munkafolyamat:</value>
+  </data>
 </root>

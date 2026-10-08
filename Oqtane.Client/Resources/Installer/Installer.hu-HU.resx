@@ -136,7 +136,7 @@
     <value>Kérjük, írja be az összes kötelező mezőt. Győződjön meg arról, hogy a jelszavak egyeznek, és a megadott e-mail cím érvényes.</value>
   </data>
   <data name="Message.Password.Invalid" xml:space="preserve">
-    <value>A megadott jelszó nem felel meg a komplexitási szabályzatnak. A jelszavaknak legalább 6 karakter hosszúságúnak kell lenniük, és tartalmazniuk kell nagybetűket, kisbetűket, numerikus karaktereket és írásjeleket.</value>
+    <value>A megadott jelszó nem felel meg a komplexitási szabályzatnak.</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Kérjük, regisztráljon a főbb termékfrissítésekért és biztonsági közleményekért</value>
@@ -184,12 +184,15 @@
     <value>Válasszon webhelysablont</value>
   </data>
   <data name="Message.Username.Invalid" xml:space="preserve">
-    <value>A megadott felhasználónév nem felel meg a rendszerkövetelménynek, csak betűket vagy számjegyeket tartalmazhat.</value>
+    <value>A megadott felhasználónév nem felel meg a rendszerkövetelménynek, csak betűket vagy számjegyeket tartalmazhat, üres helyek nélkül.</value>
   </data>
   <data name="Name.Text" xml:space="preserve">
     <value>Teljes név:</value>
   </data>
   <data name="Name.HelpText" xml:space="preserve">
     <value>Adja meg a gazda felhasználó teljes nevét</value>
+  </data>
+  <data name="Message.Email.Invalid" xml:space="preserve">
+    <value>Az Email szolgáltató nem megfelelő.</value>
   </data>
 </root>
