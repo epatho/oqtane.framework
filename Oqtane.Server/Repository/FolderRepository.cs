@@ -4,8 +4,11 @@ using System.Linq;
 using System.Security.Policy;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Oqtane.Extensions;
 using Oqtane.Infrastructure;
 using Oqtane.Models;
+using Oqtane.Providers;
 using Oqtane.Shared;
 
 namespace Oqtane.Repository
@@ -19,9 +22,8 @@ namespace Oqtane.Repository
         Folder GetFolder(int folderId);
         Folder GetFolder(int folderId, bool tracking);
         Folder GetFolder(int siteId, string path);
+        Folder GetFolder(int siteId, string path, int userId);
         void DeleteFolder(int folderId);
-        string GetFolderPath(int folderId);
-        string GetFolderPath(Folder folder);
     }
 
     public class FolderRepository : IFolderRepository
@@ -30,13 +32,15 @@ namespace Oqtane.Repository
         private readonly IPermissionRepository _permissions;
         private readonly IWebHostEnvironment _environment;
         private readonly ITenantManager _tenants;
+        private readonly IServiceProvider _serviceProvider;
 
-        public FolderRepository(IDbContextFactory<TenantDBContext> dbContextFactory, IPermissionRepository permissions,IWebHostEnvironment environment, ITenantManager tenants)
+        public FolderRepository(IDbContextFactory<TenantDBContext> dbContextFactory, IPermissionRepository permissions,IWebHostEnvironment environment, ITenantManager tenants, IServiceProvider serviceProvider)
         {
             _dbContextFactory = dbContextFactory;
             _permissions = permissions;
             _environment = environment;
             _tenants = tenants;
+            _serviceProvider = serviceProvider;
         }
 
         public IEnumerable<Folder> GetFolders(int siteId)
@@ -48,13 +52,13 @@ namespace Oqtane.Repository
         {
             using var db = _dbContextFactory.CreateDbContext();
             var folders = db.Folder
+                .Include(i => i.FolderConfig)
                 .Where(item => item.SiteId == siteId && (!item.Path.StartsWith(Constants.UserFolderPath) || item.Path == Constants.UserFolderPath || item.Path.StartsWith($"{Constants.UserFolderPath}{userId}/")))
                 .Select(item => new Folder
                 {
                     FolderId = item.FolderId,
                     SiteId = item.SiteId,
                     ParentId = item.ParentId,
-                    Type = item.Type,
                     Name = item.Name,
                     Path = item.Path,
                     Order = item.Order,
@@ -62,6 +66,9 @@ namespace Oqtane.Repository
                     Capacity = item.Capacity,
                     IsSystem = item.IsSystem,
                     CacheControl = item.CacheControl,
+                    FolderConfigId = item.FolderConfigId,
+                    FolderConfig = item.FolderConfig,
+                    MappedPath = item.MappedPath,
                     CreatedBy = item.CreatedBy,
                     CreatedOn = item.CreatedOn,
                     ModifiedBy = item.ModifiedBy,
@@ -136,6 +143,8 @@ namespace Oqtane.Repository
         public Folder AddFolder(Folder folder)
         {
             using var db = _dbContextFactory.CreateDbContext();
+            //build the mapped path
+            folder.MappedPath = BuildMappedPath(folder);
             db.Folder.Add(folder);
             db.SaveChanges();
             _permissions.UpdatePermissions(folder.SiteId, EntityNames.Folder, folder.FolderId, folder.PermissionList);
@@ -145,6 +154,8 @@ namespace Oqtane.Repository
         public Folder UpdateFolder(Folder folder)
         {
             using var db = _dbContextFactory.CreateDbContext();
+            //build the mapped path
+            folder.MappedPath = BuildMappedPath(folder);
             db.Entry(folder).State = EntityState.Modified;
             db.SaveChanges();
             _permissions.UpdatePermissions(folder.SiteId, EntityNames.Folder, folder.FolderId, folder.PermissionList);
@@ -161,13 +172,13 @@ namespace Oqtane.Repository
             // note that tracking parameter is ignored as query uses a projection
             using var db = _dbContextFactory.CreateDbContext();
             return db.Folder
+                .Include(i => i.FolderConfig)
                 .Where(item => item.FolderId == folderId)
                 .Select(item => new Folder
                 {
                     FolderId = item.FolderId,
                     SiteId = item.SiteId,
                     ParentId = item.ParentId,
-                    Type = item.Type,
                     Name = item.Name,
                     Path = item.Path,
                     Order = item.Order,
@@ -175,6 +186,9 @@ namespace Oqtane.Repository
                     Capacity = item.Capacity,
                     IsSystem = item.IsSystem,
                     CacheControl = item.CacheControl,
+                    FolderConfigId = item.FolderConfigId,
+                    FolderConfig = item.FolderConfig,
+                    MappedPath = item.MappedPath,
                     CreatedBy = item.CreatedBy,
                     CreatedOn = item.CreatedOn,
                     ModifiedBy = item.ModifiedBy,
@@ -208,13 +222,13 @@ namespace Oqtane.Repository
             // note that tracking parameter is ignored as query uses a projection
             using var db = _dbContextFactory.CreateDbContext();
             return db.Folder
+                .Include(i => i.FolderConfig)
                 .Where(item => item.SiteId == siteId && item.Path == path)
                 .Select(item => new Folder
                 {
                     FolderId = item.FolderId,
                     SiteId = item.SiteId,
                     ParentId = item.ParentId,
-                    Type = item.Type,
                     Name = item.Name,
                     Path = item.Path,
                     Order = item.Order,
@@ -222,6 +236,9 @@ namespace Oqtane.Repository
                     Capacity = item.Capacity,
                     IsSystem = item.IsSystem,
                     CacheControl = item.CacheControl,
+                    FolderConfigId = item.FolderConfigId,
+                    FolderConfig = item.FolderConfig,
+                    MappedPath = item.MappedPath,
                     CreatedBy = item.CreatedBy,
                     CreatedOn = item.CreatedOn,
                     ModifiedBy = item.ModifiedBy,
@@ -250,6 +267,41 @@ namespace Oqtane.Repository
                 .FirstOrDefault();
         }
 
+        public Folder GetFolder(int siteId, string path, int userId)
+        {
+            var folder = GetFolder(siteId, path);
+            if (folder == null && path.StartsWith(Constants.UserFolderPath) && path.Length != Constants.UserFolderPath.Length && userId != -1)
+            {
+                // get the parent user folder for this site 
+                folder = GetFolder(siteId, Constants.UserFolderPath);
+                if (folder != null)
+                {
+                    // create the user folder on this site (using the parent properties as defaults)
+                    AddFolder(new Folder
+                    {
+                        SiteId = folder.SiteId,
+                        ParentId = folder.FolderId,
+                        Name = "My Folder",
+                        Path = path,
+                        Order = 1,
+                        ImageSizes = folder.ImageSizes,
+                        Capacity = folder.Capacity,
+                        CacheControl = folder.CacheControl,
+                        IsSystem = true,
+                        FolderConfigId = _serviceProvider.GetRequiredService<IFolderProviderFactory>().GetFolderConfigId(folder.SiteId, Constants.PrivateFolderProvider),
+                        PermissionList = new List<Permission>
+                        {
+                            new Permission(PermissionNames.Browse, userId, true),
+                            new Permission(PermissionNames.View, RoleNames.Everyone, true),
+                            new Permission(PermissionNames.Edit, userId, true)
+                        }
+                    });
+                }
+                folder = GetFolder(siteId, path);
+            }
+            return folder;
+        }
+
         public void DeleteFolder(int folderId)
         {
             using var db = _dbContextFactory.CreateDbContext();
@@ -259,27 +311,19 @@ namespace Oqtane.Repository
             db.SaveChanges();
         }
 
-        public string GetFolderPath(int folderId)
+        private string BuildMappedPath(Folder folder)
         {
-            using var db = _dbContextFactory.CreateDbContext();
-            var folder = db.Folder
-                .AsNoTracking()
-                .FirstOrDefault(item => item.FolderId == folderId);
-            return GetFolderPath(folder);
-        }
-
-        public string GetFolderPath(Folder folder)
-        {
-            string path = "";
-            switch (folder.Type)
+            var path = string.Empty;
+            if (folder.ParentId != null)
             {
-                case FolderTypes.Private:
-                    path = Utilities.PathCombine(_environment.ContentRootPath, "Content", "Tenants", _tenants.GetTenant().TenantId.ToString(), "Sites", folder.SiteId.ToString(), folder.Path);
-                    break;
-                case FolderTypes.Public:
-                    path = Utilities.PathCombine(_environment.WebRootPath, "Content", "Tenants", _tenants.GetTenant().TenantId.ToString(), "Sites", folder.SiteId.ToString(), folder.Path);
-                    break;
+                var parentFolder = GetFolder(folder.ParentId.Value);
+                if (parentFolder != null)
+                {
+                    var folderName = folder.Path.Split('/', StringSplitOptions.RemoveEmptyEntries).Last();
+                    path = parentFolder.FolderConfigId != folder.FolderConfigId ? string.Empty : $"{parentFolder.MappedPath}{folderName}/";
+                }
             }
+
             return path;
         }
     }

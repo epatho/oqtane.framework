@@ -44,7 +44,7 @@
                     }
                     else
                     {
-                        if (FileId != -1 && _file != null && !UploadMultiple)
+                        if (ShowFile && FileId != -1 && _file != null && !UploadMultiple)
                         {
                             <input class="form-control" @bind="@_file.Name" disabled />
                         }
@@ -85,11 +85,11 @@
                             <div class="col-auto">
                                 @if (ShowUploadButton)
                                 {
-                                    <button type="button" class="btn btn-success" @onclick="UploadFiles">@SharedLocalizer["Upload"]</button>
+                                    <button type="button" class="btn btn-success@(ButtonSizeClass)" @onclick="UploadFiles">@SharedLocalizer["Upload"]</button>
                                 }
-                                @if (FileId != -1 && !UploadMultiple)
+                                @if (FileId != -1 && !UploadMultiple && ShowDeleteButton)
                                 {
-                                    <button type="button" class="btn btn-danger mx-1" @onclick="DeleteFile">@SharedLocalizer["Delete"]</button>
+                                    <ActionDialog Header="Delete File" Message="@string.Format(Localizer["Confirm.File.Delete"], _file?.Name)" Action="Delete" Security="SecurityAccessLevel.Anonymous" Class="@("btn btn-danger mx-1" + ButtonSizeClass)" ConfirmClass="@("btn btn-danger mx-1" + ButtonSizeClass)" CancelClass="@("btn btn-secondary" + ButtonSizeClass)" OnClick="@(async () => await DeleteFile())" ResourceKey="DeleteFile" ResourceType="@_resourceType" />
                                 }
                             </div>
                         </div>
@@ -130,6 +130,7 @@
 
 @code {
     private bool _initialized = false;
+    private string _resourceType;
     private List<Folder> _folders = new List<Folder>();
     private List<File> _files = new List<File>();
     private string _fileinputid = string.Empty;
@@ -143,6 +144,8 @@
     private string _message = string.Empty;
     private MessageType _messagetype;
     private bool _uploading = false;
+
+    private string ButtonSizeClass => SmallButtons ? " btn-sm" : string.Empty;
 
     [Parameter]
     public string Id { get; set; } // optional - for setting the id of the FileManager component for accessibility
@@ -163,10 +166,19 @@
     public bool ShowFiles { get; set; } = true; // optional - for indicating whether a list of files should be displayed - default is true
 
     [Parameter]
+    public bool ShowFile { get; set; } = true; // optional - for indicating whether a filename should be displayed when ShowFiles is false - default is true
+
+    [Parameter]
     public bool ShowUpload { get; set; } = true; // optional - indicates if the file upload/delete and progress indicator section should be visible - default is true
 
     [Parameter]
     public bool ShowUploadButton { get; set; } = true; // optional - for indicating whether an Upload button should be displayed - default is true
+
+    [Parameter]
+    public bool ShowDeleteButton { get; set; } = true; // optional - for indicating whether a Delete button should be displayed for files - default is true
+
+    [Parameter]
+    public bool SmallButtons { get; set; } = false; // optional - for indicating whether buttons should use the small button size (btn-sm) - default is false
 
     [Parameter]
     public bool UploadMultiple { get; set; } = false; // optional - enable multiple file uploads - default false
@@ -213,6 +225,7 @@
 
     protected override void OnInitialized()
     {
+        _resourceType = typeof(FileManager).FullName;
         // create unique id for component
         _guid = Guid.NewGuid().ToString("N");
         _fileinputid = "FileInput_" + _guid;
@@ -525,16 +538,28 @@
                     {
                         // verify file was uploaded (it may have been removed if folder exceeded capacity)
                         FileId = -1;
-                        if (Folder != Constants.PackagesFolder && !AnonymizeUploadFilenames)
+                        if (Folder != Constants.PackagesFolder)
                         {
-                            // get first file in upload collection (removing ":size" suffix)
-                            var file = await FileService.GetFileAsync(int.Parse(folder), uploads[0].Substring(0, uploads[0].LastIndexOf(":")));
-                            if (file != null)
+                            if (!AnonymizeUploadFilenames)
                             {
-                                FileId = file.FileId;
+                                // retrieve first file in upload collection (removing ":size" suffix)
+                                var file = await FileService.GetFileAsync(int.Parse(folder), uploads[0].Substring(0, uploads[0].LastIndexOf(":")));
+                                if (file != null)
+                                {
+                                    FileId = file.FileId;
+                                }
+                            }
+                            else
+                            {
+                                // when anonymizing file names we need to get the most recent file uploaded
+                                var files = await FileService.GetFilesAsync(int.Parse(folder));
+                                if (files.Any())
+                                {
+                                    FileId = files.OrderByDescending(item => item.CreatedOn).First().FileId;
+                                }
                             }
                         }
-                        if (FileId != -1 || (Folder == Constants.PackagesFolder || AnonymizeUploadFilenames))
+                        if (FileId != -1 || Folder == Constants.PackagesFolder)
                         {
                             await logger.LogInformation("File Upload Succeeded {Files}", uploads);
                             if (ShowSuccess)

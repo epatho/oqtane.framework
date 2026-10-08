@@ -2,6 +2,10 @@
 @inherits ModuleBase
 @inject IFolderService FolderService
 @inject IFileService FileService
+@inject ISettingService SettingService
+@inject IServiceProvider ServiceProvider
+@inject IFolderConfigService FolderConfigService
+@inject IFolderProviderFactory FolderProviderFactory
 @inject NavigationManager NavigationManager
 @inject IStringLocalizer<Edit> Localizer
 @inject IStringLocalizer<SharedResources> SharedLocalizer
@@ -12,64 +16,133 @@
         <TabPanel Name="Settings" ResourceKey="Settings" Heading="Settings">
             <form @ref="form" class="@(validated ? "was-validated" : "needs-validation")" novalidate>
                 <div class="container">
-                    <div class="row mb-1 align-items-center">
-                        <Label Class="col-sm-3" For="parent" HelpText="Select the parent folder" ResourceKey="Parent">Parent: </Label>
-                        <div class="col-sm-9">
-                            @if (_parentId == -1)
-                            {
-                                <select id="parent" class="form-select" @bind="@_parentId" required>
-                                    <option value="-1">&lt;@Localizer["NoParent"]&gt;</option>
-                                </select>
-                            }
-                            else
-                            {
-                                <select id="parent" class="form-select" @bind="@_parentId" required>
-                                @foreach (Folder folder in _folders)
-                                {
-                                    <option value="@(folder.FolderId)">@(new string('-', folder.Level * 2))@(folder.Name)</option>
-                                }
-                                </select>
-                            }
-                        </div>
-                    </div>
-                    <div class="row mb-1 align-items-center">
-                        <Label Class="col-sm-3" For="name" HelpText="Enter the folder name" ResourceKey="Name">Name: </Label>
-                        <div class="col-sm-9">
-                            @if (_isSystem)
-                            {
-                                <input id="name" class="form-control" @bind="@_name" disabled />
-                            }
-                            else
-                            {
-                                <input id="name" class="form-control" @bind="@_name" maxlength="256" required />
-                            }
-                        </div>
-                    </div>
-                    @if (PageState.QueryString.ContainsKey("id"))
+                    @if (!_isSystem)
                     {
+                        <div class="row mb-1 align-items-center">
+                            <Label Class="col-sm-3" For="parent" HelpText="Select the parent folder" ResourceKey="Parent">Parent: </Label>
+                            <div class="col-sm-9">
+                                @if (_parentId == -1)
+                                {
+                                    <select id="parent" class="form-select" @bind="@_parentId" required>
+                                        <option value="-1">&lt;@Localizer["NoParent"]&gt;</option>
+                                    </select>
+                                }
+                                else
+                                {
+                                    <select id="parent" class="form-select" value="@_parentId" @onchange="(e => ParentChanged(e))" required>
+                                        @foreach (Folder folder in _folders)
+                                        {
+                                            @if (folder.FolderId != _folderId)
+                                            {
+                                                <option value="@(folder.FolderId)">@(new string('-', folder.Level * 2))@(folder.Name)</option>
+                                            }
+                                        }
+                                    </select>
+                                }
+                            </div>
+                        </div>
+                        <div class="row mb-1 align-items-center">
+                            <Label Class="col-sm-3" For="name" HelpText="Enter the folder name" ResourceKey="Name">Name: </Label>
+                            <div class="col-sm-9">
+                                @if (_isSystem)
+                                {
+                                    <input id="name" class="form-control" @bind="@_name" disabled />
+                                }
+                                else
+                                {
+                                    <input id="name" class="form-control" @bind="@_name" maxlength="256" required />
+                                }
+                            </div>
+                        </div>
+                        @if (_parentId != -1)
+                        {
+                            <div class="row mb-1 align-items-center">
+                                <Label Class="col-sm-3" For="folderconfig" HelpText="Select the folder config." ResourceKey="FolderConfig">Folder Config:</Label>
+                                <div class="col">
+                                    @if (!_canEditFolderConfig)
+                                    {
+                                        <input id="folderconfig" class="form-control" readonly value="@(_folderConfigs.FirstOrDefault(i => i.FolderConfigId == _folderConfigId)?.Name)" />
+                                    }
+                                    else
+                                    {
+                                        <select id="folderconfig" class="form-select" value="@_folderConfigId" @onchange="(e) => OnConfigChanged(int.Parse(e.Value.ToString()))">
+                                            @foreach (var item in _folderConfigs)
+                                            {
+                                                <option value="@item.FolderConfigId">@item.Name</option>
+                                            }
+                                        </select>
+                                    }
+                                </div>
+                                @if (_canEditFolderConfig)
+                                {
+                                    <div class="col-sm-3 text-end">
+                                        <ActionLink Action="EditConfig" class="btn btn-primary" Text="Add New Config" ResourceKey="AddNewConfig" Disabled="@(!_canAddNewConfig)" ReturnUrl="@PageState.Uri.PathAndQuery" />
+                                        <ActionLink Action="EditConfig" class="btn btn-primary ms-1" Text="Edit Config" ResourceKey="EditConfig" Parameters="@($"id={_folderConfigId}")" Disabled="@(IsDefaultFolderProvider())" ReturnUrl="@PageState.Uri.PathAndQuery" />
+                                    </div>
+                                }
+                            </div>
+                        }
+                        else if(_folderId != -1)
+                        {
+                            <div class="row mb-1 align-items-center">
+                                <Label Class="col-sm-3" For="folderconfig" HelpText="Select the folder config." ResourceKey="FolderConfig">Folder Config:</Label>
+                                <div class="col">
+                                    <input id="folderconfig" class="form-control" readonly value="@(_folderConfigs.FirstOrDefault(i => i.FolderConfigId == _folderConfigId)?.Name)" />
+                                </div>
+                            </div>
+                        }
+                        @if (_folderId != -1)
+                        {
+                            <div class="row mb-1 align-items-center">
+                                <Label Class="col-sm-3" For="path" HelpText="The folder path" ResourceKey="Path">Path: </Label>
+                                <div class="col-sm-9">
+                                    <input id="path" class="form-control" @bind="@_path" disabled />
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="row mb-1 align-items-center">
+                            <Label Class="col-sm-3" For="parent" HelpText="Select the parent folder" ResourceKey="Parent">Parent: </Label>
+                            <div class="col-sm-9">
+                                <select id="parent" class="form-select" value="@_parentId" disabled>
+                                    @if (_parentId == -1)
+                                    {
+                                        <option value="-1">&lt;@Localizer["NoParent"]&gt;</option>
+                                    }
+                                    @foreach (Folder folder in _folders)
+                                    {
+                                        @if (folder.FolderId != _folderId)
+                                        {
+                                            <option value="@(folder.FolderId)">@(new string('-', folder.Level * 2))@(folder.Name)</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-1 align-items-center">
+                            <Label Class="col-sm-3" For="name" HelpText="Enter the folder name" ResourceKey="Name">Name: </Label>
+                            <div class="col-sm-9">
+                                <input id="name" class="form-control" @bind="@_name" disabled />
+                            </div>
+                        </div>
                         <div class="row mb-1 align-items-center">
                             <Label Class="col-sm-3" For="path" HelpText="The folder path" ResourceKey="Path">Path: </Label>
                             <div class="col-sm-9">
                                 <input id="path" class="form-control" @bind="@_path" disabled />
                             </div>
                         </div>
+                        @if (_folderId != -1)
+                        {
+                            <div class="row mb-1 align-items-center">
+                                <Label Class="col-sm-3" For="folderconfig" HelpText="Select the folder config." ResourceKey="FolderConfig">Folder Config:</Label>
+                                <div class="col">
+                                    <input id="folderconfig" class="form-control" readonly value="@(_folderConfigs.FirstOrDefault(i => i.FolderConfigId == _folderConfigId)?.Name)" />
+                                </div>
+                            </div>
+                        }
                     }
-                    <div class="row mb-1 align-items-center">
-                        <Label Class="col-sm-3" For="type" HelpText="Select the folder type. Private folders are only accessible by authorized users. Public folders can be accessed by all users" ResourceKey="Type">Type: </Label>
-                        <div class="col-sm-9">
-                            @if (PageState.QueryString.ContainsKey("id"))
-                            {
-                                <input id="type" class="form-control" readonly @bind="@_type" />
-                            }
-                            else
-                            {
-                                <select id="type" class="form-select" @bind="@_type" required>
-                                    <option value="@FolderTypes.Private">@Localizer[FolderTypes.Private]</option>
-                                    <option value="@FolderTypes.Public">@Localizer[FolderTypes.Public]</option>
-                                </select>
-                            }
-                        </div>
-                    </div>
                     <div class="row mb-1 align-items-center">
                         <Label Class="col-sm-3" For="capacity" HelpText="Enter the maximum folder capacity (in megabytes). Specify zero if the capacity is unlimited." ResourceKey="Capacity">Capacity: </Label>
                         <div class="col-sm-9">
@@ -89,32 +162,43 @@
                         </div>
                     </div>
                 </div>
-                @if (PageState.QueryString.ContainsKey("id"))
+                @if (_folderId != -1)
                 {
                     <br />
                     <AuditInfo CreatedBy="@_createdBy" CreatedOn="@_createdOn" ModifiedBy="@_modifiedBy" ModifiedOn="@_modifiedOn"></AuditInfo>
                 }
             </form>
         </TabPanel>
-        <TabPanel Name="Permissions" ResourceKey="Permissions" Heading="Permissions">
-            <div class="container">
-                <div class="row mb-1 align-items-center">
-                    <PermissionGrid EntityName="@EntityNames.Folder" PermissionNames="@(PermissionNames.Browse + "," + PermissionNames.View + "," + PermissionNames.Edit)" PermissionList="@_permissions" @ref="_permissionGrid" />
+        @if (!_isSystem)
+        {
+            <TabPanel Name="Permissions" ResourceKey="Permissions" Heading="Permissions">
+                <div class="container">
+                    <div class="row mb-1 align-items-center">
+                        <PermissionGrid EntityName="@EntityNames.Folder" PermissionNames="@(PermissionNames.Browse + "," + PermissionNames.View + "," + PermissionNames.Edit)" PermissionList="@_permissions" @ref="_permissionGrid" />
+                    </div>
+                    @if (_folderId != -1 && _parentId != -1)
+                    {
+                        <hr />
+                        <div class="row mb-1 align-items-center">
+                            <Label Class="col-sm-3" For="updatesubfolders" HelpText="Specify if permission changes made to this folder should be propagated to subfolders" ResourceKey="UpdateSubfolders">Update Subfolders? </Label>
+                            <div class="col-sm-9">
+                                <select id="updatesubfolders" class="form-select" @bind="@_updatesubfolders" required>
+                                    <option value="True">@SharedLocalizer["Yes"]</option>
+                                    <option value="False">@SharedLocalizer["No"]</option>
+                                </select>
+                            </div>
+                        </div>                            
+                    }
                 </div>
-            </div>
-        </TabPanel>
+            </TabPanel>
+        }
     </TabStrip>
 
     <br />
-    @if (!_isSystem)
+    <button type="button" class="btn btn-success me-1" @onclick="SaveFolder">@SharedLocalizer["Save"]</button>
+    <NavLink class="btn btn-secondary me-1" href="@NavigateUrl()">@SharedLocalizer["Cancel"]</NavLink>
+    @if (!_isSystem && _folderId != -1)
     {
-        <button type="button" class="btn btn-success" @onclick="SaveFolder">@SharedLocalizer["Save"]</button>
-        @((MarkupString)"&nbsp;")
-    }
-    <NavLink class="btn btn-secondary" href="@NavigateUrl()">@SharedLocalizer["Cancel"]</NavLink>
-    @if (!_isSystem && PageState.QueryString.ContainsKey("id"))
-    {
-        @((MarkupString)"&nbsp;")
         <ActionDialog Header="Delete Folder" Message="Are You Sure You Wish To Delete This Folder?" Action="Delete" Security="SecurityAccessLevel.Admin" Class="btn btn-danger" OnClick="@(async () => await DeleteFolder())" ResourceKey="DeleteFolder" />
     }
 }
@@ -127,29 +211,32 @@
     private int _parentId = -1;
     private string _name;
     private string _path;
-    private string _type = FolderTypes.Private;
     private string _capacity = "0";
     private string _cachecontrol = string.Empty;
     private string _imagesizes = string.Empty;
     private bool _isSystem;
+    private IEnumerable<FolderConfig> _folderConfigs;
+    private bool _canAddNewConfig = false;
+    private int _folderConfigId = -1;
+    private bool _canEditFolderConfig = false;
     private List<Permission> _permissions = null;
     private string _createdBy;
     private DateTime _createdOn;
     private string _modifiedBy;
     private DateTime _modifiedOn;
-
-#pragma warning disable 649
     private PermissionGrid _permissionGrid;
-#pragma warning restore 649
+    private string _updatesubfolders = "False";
 
     public override SecurityAccessLevel SecurityAccessLevel => SecurityAccessLevel.Admin;
 
-    public override string Title => "Folder Management"; 
+    public override string Title => "Folder Management";
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
+            _folderConfigs = await FolderConfigService.GetFolderConfigsAsync(PageState.Site.SiteId);
+            _canAddNewConfig = (await FolderConfigService.GetProvidersAsync()).Any(i => !Constants.DefaultFolderProviders.Contains(i.Key));
             _folders = await FolderService.GetFoldersAsync(PageState.Site.SiteId, false);
 
             if (PageState.QueryString.ContainsKey("id"))
@@ -161,7 +248,7 @@
                     _parentId = folder.ParentId ?? -1;
                     _name = folder.Name;
                     _path = folder.Path;
-                    _type = folder.Type;
+                    _folderConfigId = folder.FolderConfigId;
                     _capacity = folder.Capacity.ToString();
                     _cachecontrol = folder.CacheControl;
                     _imagesizes = folder.ImageSizes;
@@ -171,11 +258,33 @@
                     _createdOn = folder.CreatedOn;
                     _modifiedBy = folder.ModifiedBy;
                     _modifiedOn = folder.ModifiedOn;
+
+                    var parentFolder = _folders.FirstOrDefault(i => i.FolderId == _parentId);
+                    _canEditFolderConfig = false;
                 }
             }
             else
             {
-                _parentId = _folders[0].FolderId;
+                _canEditFolderConfig = true;
+                _folderConfigId = (await FolderConfigService.GetFolderConfigAsync(Constants.PublicFolderProvider))?.FolderConfigId ?? -1;
+
+                if (PageState.QueryString.ContainsKey("parentid"))
+                {
+                    _parentId = int.Parse(PageState.QueryString["parentid"]);
+                }
+                else
+                {
+                    _parentId = _folders[0].FolderId;
+                }
+
+                OnParentChanged(_parentId);
+
+                await LoadParent();     
+            }
+
+            if(PageState.QueryString.ContainsKey("cid") && int.TryParse(PageState.QueryString["cid"], out int cid))
+            {
+                OnConfigChanged(cid);     
             }
         }
         catch (Exception ex)
@@ -185,13 +294,35 @@
         }
     }
 
+    private async Task ParentChanged(ChangeEventArgs eventArgs)
+    {
+        _parentId = int.Parse((string)eventArgs.Value);
+        if (_folderId == -1)
+        {
+            await LoadParent();          
+            await _permissionGrid.SetPermissions(_permissions);
+        }
+    }
+
+    private async Task LoadParent()
+    {
+        var folder = await FolderService.GetFolderAsync(_parentId);
+        if (folder != null)
+        {
+            _capacity = folder.Capacity.ToString();
+            _cachecontrol = folder.CacheControl;
+            _imagesizes = folder.ImageSizes;
+            _permissions = folder.PermissionList;
+        }            
+    }
+
     private async Task SaveFolder()
     {
         validated = true;
         var interop = new Interop(JSRuntime);
         if (await interop.FormValid(form))
         {
-            if (_name == string.Empty || _parentId == -1)
+            if (_name == string.Empty)
             {
                 AddModuleMessage(Localizer["Message.Required.FolderParent"], MessageType.Warning);
                 return;
@@ -205,6 +336,7 @@
 
             try
             {
+                ShowProgressIndicator();
                 Folder folder;
 
                 if (_folderId != -1)
@@ -234,12 +366,20 @@
 
                 folder.SiteId = PageState.Site.SiteId;
                 folder.Name = _name;
-                folder.Type = _type;
+                folder.FolderConfigId = _folderConfigId;
                 folder.Capacity = int.Parse(_capacity);
                 folder.CacheControl = _cachecontrol;
                 folder.ImageSizes = _imagesizes;
                 folder.IsSystem = _isSystem;
-                folder.PermissionList = _permissionGrid.GetPermissionList();
+                if (!folder.IsSystem)
+                {
+                    folder.PermissionList = _permissionGrid.GetPermissionList();                    
+                }
+                else
+                {
+                    folder.PermissionList = _permissions;
+                }
+                folder.UpdateSubfolderPermissions = bool.Parse(_updatesubfolders);
 
                 if (_folderId != -1)
                 {
@@ -265,6 +405,10 @@
                 await logger.LogError(ex, "Error Saving Folder {FolderId} {Error}", _folderId, ex.Message);
                 AddModuleMessage(Localizer["Error.Folder.Save"], MessageType.Error);
             }
+            finally
+            {
+                HideProgressIndicator();
+            }
         }
         else
         {
@@ -276,6 +420,8 @@
     {
         try
         {
+            ShowProgressIndicator();
+
             bool isparent = false;
             foreach (Folder folder in _folders)
             {
@@ -301,5 +447,34 @@
             await logger.LogError(ex, "Error Deleting Folder {Folder} {Error}", _folderId, ex.Message);
             AddModuleMessage(Localizer["Error.Folder.Delete"], MessageType.Error);
         }
+        finally
+        {
+            HideProgressIndicator();
+        }
+    }
+
+    private void OnParentChanged(int parentId)
+    {
+        _parentId = parentId;
+        _canEditFolderConfig = false;
+        var parentFolder = _folders.FirstOrDefault(f => f.FolderId == _parentId);
+        if (parentFolder != null)
+        {
+            _canEditFolderConfig = Constants.DefaultFolderProviders.Contains(parentFolder.FolderConfig.Provider);
+
+            _folderConfigId = parentFolder.FolderConfig.FolderConfigId;
+            OnConfigChanged(parentFolder.FolderConfigId);
+        }
+    }
+
+    private void OnConfigChanged(int folderConfigId)
+    {
+        _folderConfigId = folderConfigId;
+    }
+
+    private bool IsDefaultFolderProvider()
+    {
+        var folderConfig = _folderConfigs.FirstOrDefault(i => i.FolderConfigId == _folderConfigId);
+        return folderConfig != null && Constants.DefaultFolderProviders.Contains(folderConfig.Provider);
     }
 }

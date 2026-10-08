@@ -183,6 +183,7 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IServiceCollection AddOqtaneServerScopedServices(this IServiceCollection services)
         {
             services.AddScoped<Oqtane.Shared.SiteState>();
+            services.AddScoped<IHttpContext, ServerHttpContext>();
             services.AddScoped<IInstallationService, InstallationService>();
             services.AddScoped<IModuleDefinitionService, ModuleDefinitionService>();
             services.AddScoped<IThemeService, Oqtane.Services.ThemeService>();
@@ -202,6 +203,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IJobLogService, JobLogService>();
             services.AddScoped<INotificationService, Oqtane.Services.NotificationService>();
             services.AddScoped<IFolderService, FolderService>();
+            services.AddScoped<IFolderConfigService, FolderConfigService>();
             services.AddScoped<IFileService, FileService>();
             services.AddScoped<ISiteTemplateService, SiteTemplateService>();
             services.AddScoped<ISqlService, SqlService>();
@@ -227,6 +229,11 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<ITextEditor, Oqtane.Modules.Controls.QuillJSTextEditor>();
             services.AddScoped<ITextEditor, Oqtane.Modules.Controls.TextAreaTextEditor>();
             services.AddScoped<ITextEditor, Oqtane.Modules.Controls.RadzenTextEditor>();
+
+            // file providers
+            services.AddScoped<IFolderProviderFactory, FolderProviderFactory>();
+            services.AddScoped<IFolderProvider, PublicFileProvider>();
+            services.AddScoped<IFolderProvider, PrivateFileProvider>();
 
             services.AddRadzenComponents();
 
@@ -318,6 +325,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddTransient<IJobLogRepository, JobLogRepository>();
             services.AddTransient<INotificationRepository, NotificationRepository>();
             services.AddTransient<IFolderRepository, FolderRepository>();
+            services.AddTransient<IFolderConfigRepository, FolderConfigRepository>();
             services.AddTransient<IFileRepository, FileRepository>();
             services.AddTransient<ISiteTemplateRepository, SiteTemplateRepository>();
             services.AddTransient<ISqlRepository, SqlRepository>();
@@ -342,6 +350,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddTransient<IUserManager, UserManager>();
             services.AddTransient<ILocalizationManager, LocalizationManager>();
             services.AddTransient<ITokenReplace, TokenReplace>();
+            services.AddTransient<IFolderManager, FolderManager>();
 
             // obsolete
             services.AddTransient<ITenantResolver, TenantResolver>(); // replaced by ITenantManager

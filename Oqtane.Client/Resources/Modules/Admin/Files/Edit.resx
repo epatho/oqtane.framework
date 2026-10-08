@@ -127,7 +127,7 @@
     <value>Error Loading Folder</value>
   </data>
   <data name="Message.Required.FolderParent" xml:space="preserve">
-    <value>Folders Must Have A Parent And A Name</value>
+    <value>Folders Must Have A Name</value>
   </data>
   <data name="Message.Folder.InvalidName" xml:space="preserve">
     <value>Folder Name Not Valid.</value>
@@ -201,10 +201,22 @@
   <data name="CacheControl.HelpText" xml:space="preserve">
     <value>Optionally provide a Cache-Control directive for this folder. For example 'public, max-age=60' indicates that files in this folder should be cached for 60 seconds. Please note that when caching is enabled, changes to files will not be immediately reflected in the UI.</value>
   </data>
+  <data name="AddNewConfig" xml:space="preserve">
+    <value>Add New Config</value>
+  </data>
+  <data name="EditConfig" xml:space="preserve">
+    <value>Edit Config</value>
+  </data>
   <data name="Path.Text" xml:space="preserve">
     <value>Path:</value>
   </data>
   <data name="Path.HelpText" xml:space="preserve">
     <value>The folder path</value>
+  </data>
+  <data name="UpdateSubfolders.Text" xml:space="preserve">
+    <value>Update Subfolders?</value>
+  </data>
+  <data name="UpdateSubfolders.HelpText" xml:space="preserve">
+    <value>Specify if permission changes made to this folder should be propagated to subfolders</value>
   </data>
 </root>

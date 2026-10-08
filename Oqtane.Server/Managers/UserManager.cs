@@ -11,6 +11,7 @@ using Microsoft.Extensions.Localization;
 using Oqtane.Enums;
 using Oqtane.Infrastructure;
 using Oqtane.Models;
+using Oqtane.Providers;
 using Oqtane.Repository;
 using Oqtane.Security;
 using Oqtane.Shared;
@@ -32,9 +33,9 @@ namespace Oqtane.Managers
         Task<bool> ForgotUsername(string email);
         Task<User> ResetPassword(User user, string token);
         User VerifyTwoFactor(User user, string token);
-        Task<UserValidateResult> ValidateUser(string username, string email, string password);
+        Task<bool> ValidateUsername(string username);
         Task<bool> ValidatePassword(string password);
-        Task<Dictionary<string, string>> ImportUsers(int siteId, string filePath, bool notify);
+        Task<Dictionary<string, string>> ImportUsers(int siteId, Models.File file, bool notify);
         Task<List<UserPasskey>> GetPasskeys(int userId, int siteId);
         Task UpdatePasskey(UserPasskey passkey);
         Task DeletePasskey(int userId, byte[] credentialId);
@@ -54,15 +55,17 @@ namespace Oqtane.Managers
         private readonly ITenantManager _tenantManager;
         private readonly INotificationRepository _notifications;
         private readonly IFolderRepository _folders;
+        private readonly IFileRepository _files;
         private readonly IProfileRepository _profiles;
         private readonly ISettingRepository _settings;
         private readonly ISiteRepository _sites;
         private readonly ISyncManager _syncManager;
         private readonly ILogManager _logger;
         private readonly ICacheManager _cache;
+        private readonly IFolderProviderFactory _folderProviderFactory; 
         private readonly IStringLocalizer<UserManager> _localizer;
 
-        public UserManager(IUserRepository users, IRoleRepository roles, IUserRoleRepository userRoles, UserManager<IdentityUser> identityUserManager, SignInManager<IdentityUser> identitySignInManager, ITenantManager tenantManager, INotificationRepository notifications, IFolderRepository folders, IProfileRepository profiles, ISettingRepository settings, ISiteRepository sites, ISyncManager syncManager, ILogManager logger, ICacheManager cache, IStringLocalizer<UserManager> localizer)
+        public UserManager(IUserRepository users, IRoleRepository roles, IUserRoleRepository userRoles, UserManager<IdentityUser> identityUserManager, SignInManager<IdentityUser> identitySignInManager, ITenantManager tenantManager, INotificationRepository notifications, IFolderRepository folders, IFileRepository files, IProfileRepository profiles, ISettingRepository settings, ISiteRepository sites, ISyncManager syncManager, ILogManager logger, ICacheManager cache, IStringLocalizer<UserManager> localizer, IFolderProviderFactory folderProviderFactory)
         {
             _users = users;
             _roles = roles;
@@ -72,12 +75,14 @@ namespace Oqtane.Managers
             _tenantManager = tenantManager;
             _notifications = notifications;
             _folders = folders;
+            _files = files;
             _profiles = profiles;
             _settings = settings;
             _sites = sites;
             _syncManager = syncManager;
             _logger = logger;
             _cache = cache;
+            _folderProviderFactory = folderProviderFactory;
             _localizer = localizer;
         }
 
@@ -98,6 +103,8 @@ namespace Oqtane.Managers
                     }
                     user.Settings = _settings.GetSettings(EntityNames.User, user.UserId)
                         .ToDictionary(setting => setting.SettingName, setting => setting.SettingValue);
+                    var folder = _folders.GetFolder(siteid, user.FolderPath, user.UserId);
+                    user.FolderId = (folder != null) ? folder.FolderId : -1;
                 }
                 return user;
             });
@@ -315,6 +322,21 @@ namespace Oqtane.Managers
                     }
                 }
 
+                if (user.PhotoFileId != null)
+                {
+                    // PhotoFileId is stored in Settings as it is specific to a site/folder
+                    var setting = _settings.GetSetting(EntityNames.User, user.UserId, $"PhotoFileId:{user.SiteId}");
+                    if (setting == null)
+                    {
+                        // validate file belongs to a folder in this site
+                        var file = _files.GetFile(user.PhotoFileId.Value);
+                        if (file != null && file.Folder.SiteId == user.SiteId)
+                        {
+                            _settings.AddSetting(new Setting { EntityName = EntityNames.User, EntityId = user.UserId, SettingName = $"PhotoFileId:{user.SiteId}", SettingValue = user.PhotoFileId.ToString(), IsPrivate = false });
+                        }
+                    }
+                }
+
                 user = _users.UpdateUser(user);
                 _syncManager.AddSyncEvent(_tenantManager.GetAlias(), EntityNames.User, user.UserId, SyncEventActions.Update);
                 _syncManager.AddSyncEvent(_tenantManager.GetAlias(), EntityNames.User, user.UserId, SyncEventActions.Reload);
@@ -343,10 +365,9 @@ namespace Oqtane.Managers
             var folder = _folders.GetFolder(siteid, $"{Constants.UserFolderPath}{userid}/");
             if (folder != null)
             {
-                if (Directory.Exists(_folders.GetFolderPath(folder)))
-                {
-                    Directory.Delete(_folders.GetFolderPath(folder), true);
-                }
+                var folderProvider = _folderProviderFactory.GetProvider(folder.FolderConfigId);
+                await folderProvider.DeleteFolderAsync(folder);
+
                 _folders.DeleteFolder(folder.FolderId);
                 _logger.Log(LogLevel.Information, this, LogFunction.Delete, "User Folder Deleted {Folder}", folder);
             }
@@ -641,30 +662,15 @@ namespace Oqtane.Managers
             return user;
         }
 
-        public async Task<UserValidateResult> ValidateUser(string username, string email, string password)
+        public async Task<bool> ValidateUsername(string username)
         {
-            var validateResult = new UserValidateResult { Succeeded = true };
-
-            //validate username
             var allowedChars = _identityUserManager.Options.User.AllowedUserNameCharacters;
             if (string.IsNullOrWhiteSpace(username) || (!string.IsNullOrEmpty(allowedChars) && username.Any(c => !allowedChars.Contains(c))))
             {
-                validateResult.Succeeded = false;
-                validateResult.Errors.Add("Message.Username.Invalid", string.Empty);
+                return false;
             }
-
-            //validate password
-            var passwordValidator = new PasswordValidator<IdentityUser>();
-            var passwordResult = await passwordValidator.ValidateAsync(_identityUserManager, null, password);
-            if (!passwordResult.Succeeded)
-            {
-                validateResult.Succeeded = false;
-                validateResult.Errors.Add("Message.Password.Invalid", string.Empty);
-            }
-
-            return validateResult;
+            return true;
         }
-
         public async Task<bool> ValidatePassword(string password)
         {
             var validator = new PasswordValidator<IdentityUser>();
@@ -672,13 +678,13 @@ namespace Oqtane.Managers
             return result.Succeeded;
         }
 
-        public async Task<Dictionary<string, string>> ImportUsers(int siteId, string filePath, bool notify)
+        public async Task<Dictionary<string, string>> ImportUsers(int siteId, Models.File file, bool notify)
         {
             var success = true;
             int rows = 0;
             int users = 0;
-
-            if (System.IO.File.Exists(filePath))
+            var folderProvider = _folderProviderFactory.GetProvider(file.Folder.FolderConfigId);
+            if (await folderProvider.FileExistsAsync(file.Folder, file.Name))
             {
                 var roles = _roles.GetRoles(siteId).ToList();
                 var profiles = _profiles.GetProfiles(siteId).ToList();
@@ -686,7 +692,7 @@ namespace Oqtane.Managers
                 try
                 {
                     string row = "";
-                    using (var reader = new StreamReader(filePath))
+                    using (var reader = new StreamReader(await folderProvider.GetFileStreamAsync(file)))
                     {
                         // header row
                         if (reader.Peek() > -1)
@@ -839,13 +845,13 @@ namespace Oqtane.Managers
                 catch (Exception ex)
                 {
                     success = false;
-                    _logger.Log(LogLevel.Error, this, LogFunction.Create, ex, "Error Importing User Import File {SiteId} {FilePath} {Notify}", siteId, filePath, notify);
+                    _logger.Log(LogLevel.Error, this, LogFunction.Create, ex, "Error Importing User Import File {SiteId} {Folder}{FilePath} {Notify}", siteId, file.Folder.Path, file.Name, notify);
                 }
             }
             else
             {
                 success = false;
-                _logger.Log(LogLevel.Error, this, LogFunction.Create, "User Import File Does Not Exist {FilePath}", filePath);
+                _logger.Log(LogLevel.Error, this, LogFunction.Create, "User Import File Does Not Exist {Folder}{FilePath}", file.Folder.Path, file.Name);
             }
 
             // return results

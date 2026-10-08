@@ -23,6 +23,7 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IServiceCollection AddOqtaneClientScopedServices(this IServiceCollection services)
         {
             services.AddScoped<SiteState>();
+            services.AddScoped<IHttpContext, ClientHttpContext>();
             services.AddScoped<IInstallationService, InstallationService>();
             services.AddScoped<IModuleDefinitionService, ModuleDefinitionService>();
             services.AddScoped<IThemeService, Oqtane.Services.ThemeService>();
@@ -43,6 +44,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IJobLogService, JobLogService>();
             services.AddScoped<INotificationService, Oqtane.Services.NotificationService>();
             services.AddScoped<IFolderService, FolderService>();
+            services.AddScoped<IFolderConfigService, FolderConfigService>();
             services.AddScoped<IFileService, FileService>();
             services.AddScoped<ISiteTemplateService, SiteTemplateService>();
             services.AddScoped<ISqlService, SqlService>();
