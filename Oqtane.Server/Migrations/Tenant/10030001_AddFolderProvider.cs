@@ -22,7 +22,7 @@ namespace Oqtane.Migrations.Tenant
             folderProviderEntityBuilder.Create();
 
             object utcDate = DateTime.UtcNow;
-            if (ActiveDatabase.Name == "PostgreSQL")
+            if (ActiveDatabase.Name == "PostgreSQL" || ActiveDatabase.Name == "SqlServer")
             {
                 utcDate = $"'{DateTime.UtcNow.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss'.'fffffffK")}'";
             }
