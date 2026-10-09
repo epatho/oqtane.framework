@@ -75,6 +75,7 @@
             <script src="js/app.js?v=@_fingerprint"></script>
             <script src="js/loadjs.min.js?v=@_fingerprint"></script>
             <script src="js/interop.js?v=@_fingerprint"></script>
+            <script src="_content/Radzen.Blazor/Radzen.Blazor.js?v=@(typeof(Radzen.Colors).Assembly.GetName().Version)"></script>
 
             @((MarkupString)_scripts)
             @((MarkupString)_bodyResources)
