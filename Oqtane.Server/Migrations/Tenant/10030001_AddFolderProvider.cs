@@ -20,8 +20,15 @@ namespace Oqtane.Migrations.Tenant
         {
             var folderProviderEntityBuilder = new FolderConfigEntityBuilder(migrationBuilder, ActiveDatabase);
             folderProviderEntityBuilder.Create();
-            folderProviderEntityBuilder.InsertData(new[] { "Name", "Provider", "CreatedBy", "CreatedOn", "ModifiedBy", "ModifiedOn" }, new object[] { $"'Public'", $"'{Constants.PublicFolderProvider}'", "''", DateTime.UtcNow, "''", DateTime.UtcNow }, string.Empty);
-            folderProviderEntityBuilder.InsertData(new[] { "Name", "Provider", "CreatedBy", "CreatedOn", "ModifiedBy", "ModifiedOn" }, new object[] { $"'Private'", $"'{Constants.PrivateFolderProvider}'", "''", DateTime.UtcNow, "''", DateTime.UtcNow }, string.Empty);
+
+            object utcDate = DateTime.UtcNow;
+            if (ActiveDatabase.Name == "PostgreSQL")
+            {
+                utcDate = $"'{DateTime.UtcNow.ToString("yyyy'-'MM'-'dd' 'HH':'mm':'ss'.'fffffffK")}'";
+            }
+                
+            folderProviderEntityBuilder.InsertData(new[] { "Name", "Provider", "CreatedBy", "CreatedOn", "ModifiedBy", "ModifiedOn" }, new object[] { $"'Public'", $"'{Constants.PublicFolderProvider}'", "''", utcDate, "''", utcDate }, string.Empty);
+            folderProviderEntityBuilder.InsertData(new[] { "Name", "Provider", "CreatedBy", "CreatedOn", "ModifiedBy", "ModifiedOn" }, new object[] { $"'Private'", $"'{Constants.PrivateFolderProvider}'", "''", utcDate, "''", utcDate }, string.Empty);
 
             var folderEntityBuilder = new FolderEntityBuilder(migrationBuilder, ActiveDatabase);
             folderEntityBuilder.AddIntegerColumn("FolderConfigId", false, 1);
