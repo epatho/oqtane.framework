@@ -35,7 +35,10 @@ namespace Oqtane.Controllers
         private readonly IModuleDefinitionRepository _moduleDefinitions;
         private readonly IThemeRepository _themes;
 
-        public InstallationController(IConfigManager configManager, IInstallationManager installationManager, IDatabaseManager databaseManager, ILocalizationManager localizationManager, ICacheManager cache, IHttpContextAccessor accessor, IAliasRepository aliases, ISiteRepository sites, ILogger<InstallationController> filelogger, ITenantManager tenantManager, IModuleDefinitionRepository moduleDefinitions, IThemeRepository themes)
+        // PEX 2026.07.23
+        private readonly ISyncManager _syncManager;
+
+        public InstallationController(IConfigManager configManager, IInstallationManager installationManager, IDatabaseManager databaseManager, ILocalizationManager localizationManager, ICacheManager cache, IHttpContextAccessor accessor, IAliasRepository aliases, ISiteRepository sites, ILogger<InstallationController> filelogger, ITenantManager tenantManager, IModuleDefinitionRepository moduleDefinitions, IThemeRepository themes, ISyncManager syncManager)
         {
             _configManager = configManager;
             _installationManager = installationManager;
@@ -49,6 +52,9 @@ namespace Oqtane.Controllers
             _tenantManager = tenantManager;
             _moduleDefinitions = moduleDefinitions;
             _themes = themes;
+
+            // PEX 2026.07.23
+            _syncManager = syncManager;
         }
 
         // GET api/<controller>
@@ -73,6 +79,10 @@ namespace Oqtane.Controllers
                 if (installation.Success)
                 {
                     await RegisterContact(config.HostEmail, config.HostName, config.Register);
+
+                    // PEX 2026.07.23
+                    // add sync event to notify others of new site
+                    _syncManager.AddSyncEvent(installation.Alias, EntityNames.Site, installation.Alias.SiteId, SyncEventActions.Create);
                 }
             }
             else

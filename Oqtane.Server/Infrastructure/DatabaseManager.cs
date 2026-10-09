@@ -716,6 +716,10 @@ namespace Oqtane.Infrastructure
                                     site.Version = version;
                                     sites.UpdateSite(site);
                                 }
+
+                                // PEX 2026.07.23
+                                // update the alias in the result so that the installer can display the correct alias for the newly created site
+                                result.Alias ??= alias;
                             }
                         }
                     }
