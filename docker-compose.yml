@@ -1,0 +1,39 @@
+services:
+  oqtane.server:
+    image: ${DOCKER_REGISTRY-}oqtaneserver
+    build:
+      context: .
+      dockerfile: Oqtane.Server/Dockerfile
+    networks:
+      - octane-net
+    volumes:
+      - oqtane_data:/app/Data
+      - oqtane_ini:/app/ini
+      - oqtane_content:/app/Content
+    post_start:
+      - command: /bin/sh -c "chown -R app:app /app/Data && chmod -R 755 /app/Data && chown -R app:app /app/ini && chmod -R 755 /app/ini && chown -R app:app /app/Content && chmod -R 755 /app/Content && cp -n /app/appsettings.json /app/ini"
+        # && exec su app -c 'dotnet /app/Oqtane.Server.dll'
+        user: root
+        privileged: true
+  
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2022-latest 
+    environment:
+      - "SA_PASSWORD=DbAdmin-123456"
+      - "ACCEPT_EULA=Y"
+    networks:
+      - octane-net
+    volumes:
+      - oqtane_db:/var/opt/mssql
+    ports:
+      - "1533:1433"
+volumes:
+  oqtane_db:
+  oqtane_ini:
+  oqtane_data:
+  oqtane_content:
+
+networks:
+  octane-net:
+    driver: bridge
+    enable_ipv6: false    

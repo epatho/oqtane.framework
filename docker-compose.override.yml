@@ -1,0 +1,15 @@
+services:
+  oqtane.server:
+    environment:
+      - "ASPNETCORE_URLS=http://+:8080"
+      - "ASPNETCORE_HTTP_PORTS=8080"
+      - "ASPNETCORE_ENVIRONMENT=Development"
+      - "OQTANE_APPSETTINGS_PATH=/app/ini"
+      - "INSTALLATION__USEHTTPSREDIRECTION=false"
+    ports:
+      - "8080:8080"      
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
