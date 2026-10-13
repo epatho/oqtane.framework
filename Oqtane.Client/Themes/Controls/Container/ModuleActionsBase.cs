@@ -64,17 +64,17 @@ namespace Oqtane.Themes.Controls
 
                 if (ModuleState.PaneModuleIndex > 0)
                 {
-                    actionList.Add(new ActionViewModel { Icon = Icons.ArrowThickTop, Name = "Move Up", Action = async (s, m) => await MoveUp(s, m) });
+                    actionList.Add(new ActionViewModel { Icon = Icons.ArrowThickTop, Name = Localizer["MoveUp"], Action = async (s, m) => await MoveUp(s, m) });
                 }
 
                 if (ModuleState.PaneModuleIndex < (ModuleState.PaneModuleCount - 1))
                 {
-                    actionList.Add(new ActionViewModel { Icon = Icons.ArrowThickBottom, Name = "Move Down", Action = async (s, m) => await MoveDown(s, m) });
+                    actionList.Add(new ActionViewModel { Icon = Icons.ArrowThickBottom, Name = Localizer["MoveDown"], Action = async (s, m) => await MoveDown(s, m) });
                 }
 
                 if (ModuleState.PaneModuleIndex < (ModuleState.PaneModuleCount - 1))
                 {
-                    actionList.Add(new ActionViewModel { Icon = Icons.DataTransferDownload, Name = "Move To Bottom", Action = async (s, m) => await MoveBottom(s, m) });
+                    actionList.Add(new ActionViewModel { Icon = Icons.DataTransferDownload, Name = Localizer["MoveToBottom"], Action = async (s, m) => await MoveBottom(s, m) });
                 }
 
                 foreach (string pane in PageState.Page.Panes)

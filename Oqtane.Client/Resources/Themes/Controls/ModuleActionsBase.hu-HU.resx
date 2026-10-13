@@ -130,16 +130,19 @@
     <value>Beállítások kezelése</value>
   </data>
   <data name="MoveDown" xml:space="preserve">
-    <value>Mozgás Le</value>
+    <value>Mozgatás lefelé</value>
+  </data>
+  <data name="MoveTo" xml:space="preserve">
+    <value>Mozgatás</value>
   </data>
   <data name="MoveToBottom" xml:space="preserve">
     <value>Mozgatás az aljára</value>
   </data>
   <data name="MoveToTop" xml:space="preserve">
-    <value>Ugrás a tetejére</value>
+    <value>Mozgatás a tetejére</value>
   </data>
   <data name="MoveUp" xml:space="preserve">
-    <value>MoveUp</value>
+    <value>Mozgatás felfelé</value>
   </data>
   <data name="PublishModule" xml:space="preserve">
     <value>Modul közzététele</value>

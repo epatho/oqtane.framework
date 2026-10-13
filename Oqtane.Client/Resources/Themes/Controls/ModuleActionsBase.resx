@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -131,6 +131,9 @@
   </data>
   <data name="MoveDown" xml:space="preserve">
     <value>Move Down</value>
+  </data>
+  <data name="MoveTo" xml:space="preserve">
+    <value>Move to</value>
   </data>
   <data name="MoveToBottom" xml:space="preserve">
     <value>Move To Bottom</value>
