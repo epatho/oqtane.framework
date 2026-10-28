@@ -214,7 +214,17 @@ namespace Oqtane.Infrastructure
                                     result = CreateSite(install);
                                     if (result.Success)
                                     {
+                                        // Save the alias in the result so that the installer can display the correct alias for the newly created site
+                                        // PEX 2026.10.25
+                                        var alias = result.Alias;
+
                                         result = InitializeSites(install);
+
+                                        if (result.Success)
+                                        {
+                                            // If the alias was set during site creation, retain it in the result
+                                            result.Alias = alias;
+                                        }
                                     }
                                 }
                             }
@@ -653,6 +663,9 @@ namespace Oqtane.Infrastructure
                                 {
                                     alias.SiteId = site.SiteId;
                                     aliases.UpdateAlias(alias);
+                                    // PEX 2026.07.23
+                                    // update the alias in the result so that the installer can display the correct alias for the newly created site
+                                    result.Alias = alias;
                                 }
                             }
 
@@ -719,7 +732,7 @@ namespace Oqtane.Infrastructure
 
                                 // PEX 2026.07.23
                                 // update the alias in the result so that the installer can display the correct alias for the newly created site
-                                result.Alias ??= alias;
+                                result.Alias = alias;
                             }
                         }
                     }

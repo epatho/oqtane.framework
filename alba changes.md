@@ -19,3 +19,8 @@
     - Project: Oqtane.Server.Components
         - App.razor: Add the Radzen script to load every site and page
             <script src="_content/Radzen.Blazor/Radzen.Blazor.js?v=@(typeof(Radzen.Colors).Assembly.GetName().Version)"></script>
+
+### 2026.10.28
+- Site install returns the first Alias in result
+        - DatabaseManager.cs: Installation CreateSite(InstallConfig install) return value contains Alias
+        - DatabaseManager.cs: Save alias instance return value and assign to result.alias
