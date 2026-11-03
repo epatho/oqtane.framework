@@ -1,13 +1,13 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 using Oqtane.Enums;
-using Oqtane.Extensions;
 using Oqtane.Infrastructure;
-using Oqtane.Managers;
 using Oqtane.Models;
 using Oqtane.Providers;
 using Oqtane.Repository;
@@ -19,35 +19,35 @@ namespace Oqtane.Controllers
     [Route(ControllerRoutes.ApiRoute)]
     public class FolderController : Controller
     {
-        private readonly IFolderProviderFactory _folderProviderFactory;
+        private readonly IStorageProviderFactory _storageProviderFactory;
         private readonly IFolderRepository _folders;
-        private readonly IFolderConfigRepository _folderConfigs;
         private readonly IUserPermissions _userPermissions;
         private readonly IFileRepository _files;
         private readonly IPermissionRepository _permissionRepository;
         private readonly ISyncManager _syncManager;
         private readonly ILogManager _logger;
+        private readonly IServiceProvider _serviceProvider;
         private readonly Alias _alias;
 
         public FolderController(
-            IFolderProviderFactory folderProviderFactory,
+            IStorageProviderFactory storageProviderFactory,
             IFolderRepository folders,
-            IFolderConfigRepository folderConfigs,
             IUserPermissions userPermissions,
             IFileRepository files,
             ISyncManager syncManager,
             ILogManager logger,
             ITenantManager tenantManager,
+            IServiceProvider serviceProvider,
             IPermissionRepository permissionRepository)
         {
-            _folderProviderFactory = folderProviderFactory;
+            _storageProviderFactory = storageProviderFactory;
             _folders = folders;
-            _folderConfigs = folderConfigs;
             _userPermissions = userPermissions;
             _files = files;
             _permissionRepository = permissionRepository;
             _syncManager = syncManager;
             _logger = logger;
+            _serviceProvider = serviceProvider;
             _alias = tenantManager.GetAlias();
         }
 
@@ -166,32 +166,36 @@ namespace Oqtane.Controllers
                 }
                 if (_userPermissions.IsAuthorized(User, PermissionNames.Edit, permissions))
                 {
-                    if (folder.IsPathValid())
+                    // folder must have parentid and name must be valid
+                    if (folder.ParentId != null && folder.IsPathValid())
                     {
-                        if (string.IsNullOrEmpty(folder.Path) && folder.ParentId != null)
-                        {
-                            Folder parent = _folders.GetFolder(folder.ParentId.Value);
-                            folder.Path = Utilities.UrlCombine(parent.Path, folder.Name);
-                        }
+                        // generate folder path
+                        Folder parent = _folders.GetFolder(folder.ParentId.Value);
+                        folder.Path = Utilities.UrlCombine(parent.Path, folder.Name);
                         if (!folder.Path.EndsWith("/"))
                         {
                             folder.Path = folder.Path + "/";
                         }
-                        if(folder.FolderConfigId <= 0)
+
+                        // set default storage provider if not specified
+                        if (string.IsNullOrEmpty(folder.StorageProvider))
                         {
-                            folder.FolderConfigId = _folderProviderFactory.GetDefaultConfigId(folder.SiteId);
+                            folder.StorageProvider = Constants.PrivateStorageProvider;
                         }
 
+                        // add folder
                         folder = _folders.AddFolder(folder);
+
                         //create the folder in the provider
-                        var folderProvider = _folderProviderFactory.GetProvider(folder.FolderConfigId);
+                        var folderProvider = _storageProviderFactory.GetProvider(folder);
                         await folderProvider.CreateFolderAsync(folder);
+
                         _syncManager.AddSyncEvent(_alias, EntityNames.Folder, folder.FolderId, SyncEventActions.Create);
                         _logger.Log(LogLevel.Information, this, LogFunction.Create, "Folder Added {Folder}", folder);
                     }
                     else
                     {
-                        _logger.Log(LogLevel.Information, this, LogFunction.Create, "Folder Name Not Valid {Folder}", folder);
+                        _logger.Log(LogLevel.Information, this, LogFunction.Create, "Folder Does Not Have Parent or Name Not Valid {Folder}", folder);
                         HttpContext.Response.StatusCode = (int)HttpStatusCode.Forbidden;
                         folder = null;
                     }
@@ -219,38 +223,48 @@ namespace Oqtane.Controllers
         {
             if (ModelState.IsValid && folder.SiteId == _alias.SiteId && folder.FolderId == id && _folders.GetFolder(folder.FolderId, false) != null && _userPermissions.IsAuthorized(User, folder.SiteId, EntityNames.Folder, folder.FolderId, PermissionNames.Edit))
             {
+                // folder name must be valid
                 if (folder.IsPathValid())
                 {
                     if (folder.ParentId != null)
                     {
+                        // generate folder path
                         Folder parent = _folders.GetFolder(folder.ParentId.Value);
-
-                        if(parent.FolderConfigId != _folderProviderFactory.GetDefaultConfigId(folder.SiteId) && folder.FolderConfigId != parent.FolderConfigId)
-                        {
-                            _logger.Log(LogLevel.Information, this, LogFunction.Create, "Folder Config Not Valid {Folder}", folder);
-                            HttpContext.Response.StatusCode = (int)HttpStatusCode.Forbidden;
-                            return null;
-                        }
-
                         folder.Path = Utilities.UrlCombine(parent.Path, folder.Name);
                         if (!folder.Path.EndsWith("/"))
                         {
                             folder.Path = folder.Path + "/";
                         }
+
+                        if (parent.StorageProvider != folder.StorageProvider && !Constants.DefaultStorageProviders.Contains(parent.StorageProvider))
+                        {
+                            _logger.Log(LogLevel.Information, this, LogFunction.Create, "Folder Provider Not Valid {Folder}", folder);
+                            HttpContext.Response.StatusCode = (int)HttpStatusCode.Forbidden;
+                            return null;
+                        }
+                    }
+                    else
+                    {
+                        folder.Path = ""; // only root folder has no parent
                     }
 
-                    var _folder = _folders.GetFolder(id, false);
+                    // get existing folder
+                    var existing = _folders.GetFolder(id, false);
+
+                    // update folder
                     folder = _folders.UpdateFolder(folder);
 
-                    if (folder.Path != _folder.Path) // need to update all child folder's path
+                    // update all child folder paths
+                    if (folder.Path != existing.Path) 
                     {
                         UpdateChildFoldersPath(folder);
                     }
 
-                    var folderProvider = _folderProviderFactory.GetProvider(folder.FolderConfigId);
-                    if (_folder.MappedPath != folder.MappedPath && _folder.FolderConfigId == folder.FolderConfigId && await folderProvider.FolderExistsAsync(_folder))
+                    // update folder provider
+                    var folderProvider = _storageProviderFactory.GetProvider(folder);
+                    if (existing.MappedPath != folder.MappedPath && existing.StorageProvider == folder.StorageProvider && await folderProvider.FolderExistsAsync(existing))
                     {
-                        await folderProvider.MoveFolderAsync(_folder, folder.MappedPath);
+                        await folderProvider.MoveFolderAsync(existing, folder.MappedPath);
                     }
 
                     _syncManager.AddSyncEvent(_alias, EntityNames.Folder, folder.FolderId, SyncEventActions.Update);
@@ -318,9 +332,9 @@ namespace Oqtane.Controllers
         public async Task Delete(int id)
         {
             var folder = _folders.GetFolder(id, false);
-            if (folder != null && folder.SiteId == _alias.SiteId && _userPermissions.IsAuthorized(User, folder.SiteId, EntityNames.Folder, id, PermissionNames.Edit))
+            if (folder != null && folder.SiteId == _alias.SiteId && _userPermissions.IsAuthorized(User, folder.SiteId, EntityNames.Folder, id, PermissionNames.Edit) && !folder.IsSystem)
             {
-                var folderProvider = _folderProviderFactory.GetProvider(folder.FolderConfigId);
+                var folderProvider = _storageProviderFactory.GetProvider(folder);
                 if (folderProvider != null)
                 {
                     await folderProvider.DeleteFolderAsync(folder);
@@ -341,6 +355,27 @@ namespace Oqtane.Controllers
                 _logger.Log(LogLevel.Error, this, LogFunction.Security, "Unauthorized Folder Delete Attempt {FolderId}", id);
                 HttpContext.Response.StatusCode = (int)HttpStatusCode.Forbidden;
             }
+        }
+
+        [HttpGet("storageproviders")]
+        public IList<StorageProvider> GetProviders()
+        {
+            return _serviceProvider.GetServices<IStorageProvider>()
+                .Select(i => new StorageProvider
+                {
+                    DisplayName = i.DisplayName,
+                    Type = $"{i.GetType().FullName}, {i.GetType().Assembly.GetName().Name}",
+                    ControlType = i.SettingControlType
+                })
+                .OrderBy(i => i.Type switch
+                {
+                    Constants.PublicStorageProvider => 1,
+                    Constants.PrivateStorageProvider => 2,
+                    _ => 3
+                })
+                .ThenBy(i => i.DisplayName)
+                .ToList();
+
         }
 
         private void UpdateChildFoldersPath(Folder folder)

@@ -28,6 +28,7 @@ using Oqtane.Extensions;
 using Oqtane.Infrastructure;
 using Oqtane.Interfaces;
 using Oqtane.Managers;
+using Oqtane.Models;
 using Oqtane.Modules;
 using Oqtane.Providers;
 using Oqtane.Repository;
@@ -203,7 +204,6 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IJobLogService, JobLogService>();
             services.AddScoped<INotificationService, Oqtane.Services.NotificationService>();
             services.AddScoped<IFolderService, FolderService>();
-            services.AddScoped<IFolderConfigService, FolderConfigService>();
             services.AddScoped<IFileService, FileService>();
             services.AddScoped<ISiteTemplateService, SiteTemplateService>();
             services.AddScoped<ISqlService, SqlService>();
@@ -231,9 +231,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<ITextEditor, Oqtane.Modules.Controls.RadzenTextEditor>();
 
             // file providers
-            services.AddScoped<IFolderProviderFactory, FolderProviderFactory>();
-            services.AddScoped<IFolderProvider, PublicFileProvider>();
-            services.AddScoped<IFolderProvider, PrivateFileProvider>();
+            services.AddScoped<IStorageProviderFactory, StorageProviderFactory>();
 
             services.AddRadzenComponents();
 
@@ -325,8 +323,8 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddTransient<IJobLogRepository, JobLogRepository>();
             services.AddTransient<INotificationRepository, NotificationRepository>();
             services.AddTransient<IFolderRepository, FolderRepository>();
-            services.AddTransient<IFolderConfigRepository, FolderConfigRepository>();
             services.AddTransient<IFileRepository, FileRepository>();
+            services.AddTransient<IFileBlobRepository, FileBlobRepository>();
             services.AddTransient<ISiteTemplateRepository, SiteTemplateRepository>();
             services.AddTransient<ISqlRepository, SqlRepository>();
             services.AddTransient<ILanguageRepository, LanguageRepository>();
@@ -432,6 +430,7 @@ namespace Microsoft.Extensions.DependencyInjection
             }
 
             var hostedServiceType = typeof(IHostedService);
+            var folderProviderType = typeof(IStorageProvider);
 
             var assemblies = AppDomain.CurrentDomain.GetOqtaneAssemblies();
             foreach (var assembly in assemblies)
@@ -466,6 +465,13 @@ namespace Microsoft.Extensions.DependencyInjection
                     {
                         services.AddSingleton(hostedServiceType, serviceType);
                     }
+                }
+
+                // dynamically register storage providers
+                var folderProviderTypes = assembly.GetInterfaces<IStorageProvider>();
+                foreach (var type in folderProviderTypes)
+                {
+                    services.AddScoped(folderProviderType, type);
                 }
 
                 // dynamically register server startup services

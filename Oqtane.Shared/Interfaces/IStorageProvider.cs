@@ -4,28 +4,23 @@ using System.Threading.Tasks;
 
 namespace Oqtane.Providers
 {
-    public interface IFolderProvider
+    public interface IStorageProvider
     {
         /// <summary>
-        /// The unique identifier for the provider
-        /// </summary>
-        string Name { get; }
-
-        /// <summary>
-        /// The user-friendly name displayed in the UI.
+        /// The storage provider display name.
         /// </summary>
         string DisplayName { get; }
 
         /// <summary>
-        /// The type name of the provider for configuration purposes.
+        /// The control type used to manage the storage provider configuration.
         /// </summary>
-        string SettingType { get; }
+        string SettingControlType { get; }
 
         /// <summary>
         /// Initializes the provider with required settings.
         /// </summary>
-        /// <param name="settings">Dictionary of configuration values.</param>
-        void Initialize(IDictionary<string, string> settings);
+        /// <param name="folderId">The folder Id.</param>
+        void Initialize(int folderId);
 
         #region File APIs
 

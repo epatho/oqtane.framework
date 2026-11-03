@@ -6,25 +6,23 @@ using Oqtane.Shared;
 
 namespace Oqtane.Providers
 {
-    public class PrivateFileProvider : PublicFileProvider
+    public class PrivateStorageProvider : PublicStorageProvider
     {
         private readonly IWebHostEnvironment _environment;
         private readonly ITenantManager _tenantManager;
 
-        public override string Name => Constants.PrivateFolderProvider;
-
-        public override string DisplayName => "Private File System";
-
-        public PrivateFileProvider(
+        public PrivateStorageProvider(
             IWebHostEnvironment environment,
             IFolderRepository folderRepository,
-            IFileRepository fileRepository,
             ITenantManager tenantManager,
-            ILogManager logger) : base(environment, folderRepository, fileRepository, tenantManager, logger)
+            IStorageProviderFactory storageProviderFactory,
+            ILogManager logger) : base(environment, folderRepository, tenantManager, storageProviderFactory, logger)
         {
             _environment = environment;
             _tenantManager = tenantManager;
         }
+
+        public override string DisplayName { get; } = "Local Server Private Storage";
 
         protected override string GetFolderPath(Folder folder, string folderPath)
         {
@@ -35,5 +33,6 @@ namespace Oqtane.Providers
         {
             return Utilities.PathCombine(_environment.ContentRootPath, "Content", "Tenants", _tenantManager.GetTenant().TenantId.ToString(), "Sites", siteId.ToString(), folderPath);
         }
+
     }
 }
